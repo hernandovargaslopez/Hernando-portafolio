@@ -16405,18 +16405,27 @@
 		}
 
 
-		new Swiper('.swiper__detalles', {
-			loop: true,
-			autoplay: {
-			delay: 4000, // Tiempo entre slides (en milisegundos)
-			disableOnInteraction: false,
-			},
-			pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-			},
-		});
+	});
 
+	const swiper = new Swiper('.swiper__detalles', {
+		loop: true,
+		autoplay: {
+		delay: 4000, // Tiempo entre slides (en milisegundos)
+		disableOnInteraction: false,
+		},
+		pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+		},
+	});	
+	const swiperElement = document.querySelector('.swiper__detalles');
+
+	swiperElement.addEventListener('mouseenter', () => {
+		swiper.autoplay.stop();
+	});
+
+	swiperElement.addEventListener('mouseleave', () => {
+		swiper.autoplay.start();
 	});
 
 })();

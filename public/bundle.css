@@ -14,7 +14,7 @@ a:hover {
   text-decoration: none;
 }
 
-.container {
+body.container {
   max-width: 1000px !important;
 }
 
@@ -185,8 +185,14 @@ section {
   opacity: 1;
 }
 .hero__burbuja--active-2 {
-  transform: translateY(-170px);
+  transform: translateY(-140px);
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .hero__burbuja--active-2 {
+    transform: translateY(-120px);
+    opacity: 1;
+  }
 }
 @media (max-width: 576px) {
   .hero__burbuja--azul {
@@ -286,7 +292,6 @@ section {
 }
 
 .footer {
-  max-width: 1000px;
   margin: auto;
   text-align: center;
   padding: 40px 0px;
@@ -386,7 +391,8 @@ section {
   z-index: 1;
   background: #fff;
   padding: 5px;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1000px;
   border-radius: 10px;
   position: relative;
 }

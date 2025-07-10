@@ -24,7 +24,7 @@
 				</nav>
 			</header>
 			<section class="hero bg-white row">
-				<div class="hero__info col-md-8 px-3 p-sm-5">
+				<div class="hero__info col-12 col-sm-8 px-3 p-sm-5">
 					<div class="hero__header">
 						<div class="hero__titulo hero__titulo--uno" data-texto="Hola!">
 							<div class="hero__cursor" id="cursor">
@@ -112,7 +112,7 @@
 					</div>
 				</div>
 				
-				<div class="hero__contenedor-foto d-flex align-items-center col-md-4 p-5">
+				<div class="hero__contenedor-foto d-flex align-items-center col-12 col-sm-4 p-5 p-sm-3 p-lg-5">
 					<div class="m-auto rounded-circle overflow-hidden">
 						<img class="hero__foto p-0" src="./img/hero.png" alt="" />
 					</div>
@@ -291,67 +291,9 @@
 					</a>
 				</div>
 			</footer>
-		</div>
-
-		<section class="ventana" id="ventana-correo">
-			<div class="ventana__overlay" data-action="cerrar-ventana">
-				<div class="ventana__correo">
-					<button class="ventana__btn-cerrar" data-action="cerrar-ventana">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="ventana__icono-cerrar"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-							/>
-						</svg>
-					</button>
-					<h3 class="ventana__titulo">Correo Electrónico:</h3>
-					<img src="./img/info.png" class="ventana__imagen-correo" alt="" />
-				</div>
-			</div>
-		</section>
-
-		<section class="ventana" id="ventana-trabajos">
-			<div class="ventana__overlay">
-				<div class="ventana__body row">
-					<div class="sider col-md-6 d-flex p-0 overflow-hidden align-items-center">
-						<!-- Imagen principal con botón -->
-						<div class="ventana__contenedor-imagen h-100" style="min-width: 100%;">
-
-							<img src="./img/trabajo-2.png" class="ventana__imagen w-100 p-2" alt="Imagen secundaria">
-							
-							<!-- Botón en la parte inferior -->
-							<button class="btn btn-primary position-absolute bottom-0 py-1 mb-3 z-3 btn-sm small">Ver galería</button>
-						</div>
-
-						<!-- Carrusel Swiper -->
-						<div class="swiper-container" style="min-width: 100%;">
-							<div class="swiper position-relative">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide"><img src="img/trabajo-2a.png" alt="Imagen 1"></div>
-									<div class="swiper-slide"><img src="img/trabajo-2b.png" alt="Imagen 2"></div>
-									<div class="swiper-slide"><img src="img/trabajo-2c.png" alt="Imagen 3"></div>
-									<div class="swiper-slide"><img src="img/trabajo-2d.png" alt="Imagen 4"></div>
-								</div>
-	
-								<!-- Controles Swiper -->
-								<div class="controles position-absolute w-100">
-									<div class="swiper-button-prev" tabindex="0" role="button" aria-label="Anterior"></div>
-									<div class="swiper-button-next" tabindex="0" role="button" aria-label="Siguiente"></div>
-								</div>
-							</div>
-							<div class="swiper-pagination position-relative bottom-0"></div>
-						</div>
-					</div>
-
-
-					
-					<div class="ventana__info col-md-6">
+			<section class="ventana" id="ventana-correo">
+				<div class="ventana__overlay" data-action="cerrar-ventana">
+					<div class="ventana__correo">
 						<button class="ventana__btn-cerrar" data-action="cerrar-ventana">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -366,16 +308,76 @@
 								/>
 							</svg>
 						</button>
-						<h2 class="ventana__titulo">Trabajo 1</h2>
-						<a href="" class="url"></a>
-						<p class="ventana__parrafo">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quis, veniam eius
-							nesciunt ex enim delectus, nobis perferendis ut minima optio id earum consectetur repellat
-							ea natus qui, aliquid totam?
-						</p>
+						<h3 class="ventana__titulo">Correo Electrónico:</h3>
+						<img src="./img/info.png" class="ventana__imagen-correo" alt="" />
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+	
+			<section class="ventana p-0" id="ventana-trabajos">
+				<div class="ventana__overlay p-3">
+					<div class="p-0 p-sm-5 w-100 d-flex justify-content-center">
+						<div class="ventana__body row">
+							<div class="sider col-md-6 d-flex p-0 overflow-hidden align-items-center">
+								<!-- Imagen principal con botón -->
+								<div class="ventana__contenedor-imagen h-100" style="min-width: 100%;">
+		
+									<img src="./img/trabajo-2.png" class="ventana__imagen w-100 p-2" alt="Imagen secundaria">
+									
+									<!-- Botón en la parte inferior -->
+									<button class="btn btn-primary position-absolute bottom-0 py-1 mb-3 z-3 btn-sm small">Ver galería</button>
+								</div>
+		
+								<!-- Carrusel Swiper -->
+								<div class="swiper-container" style="min-width: 100%;">
+									<div class="swiper position-relative">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"><img src="img/trabajo-2a.png" alt="Imagen 1"></div>
+											<div class="swiper-slide"><img src="img/trabajo-2b.png" alt="Imagen 2"></div>
+											<div class="swiper-slide"><img src="img/trabajo-2c.png" alt="Imagen 3"></div>
+											<div class="swiper-slide"><img src="img/trabajo-2d.png" alt="Imagen 4"></div>
+										</div>
+			
+										<!-- Controles Swiper -->
+										<div class="controles position-absolute w-100">
+											<div class="swiper-button-prev" tabindex="0" role="button" aria-label="Anterior"></div>
+											<div class="swiper-button-next" tabindex="0" role="button" aria-label="Siguiente"></div>
+										</div>
+									</div>
+									<div class="swiper-pagination position-relative bottom-0"></div>
+								</div>
+							</div>
+		
+		
+							
+							<div class="ventana__info col-md-6">
+								<button class="ventana__btn-cerrar" data-action="cerrar-ventana">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="ventana__icono-cerrar"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+										/>
+									</svg>
+								</button>
+								<h2 class="ventana__titulo">Trabajo 1</h2>
+								<a href="" class="url"></a>
+								<p class="ventana__parrafo">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quis, veniam eius
+									nesciunt ex enim delectus, nobis perferendis ut minima optio id earum consectetur repellat
+									ea natus qui, aliquid totam?
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
 	</body>
 </html>
