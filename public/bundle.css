@@ -14,6 +14,17 @@ a:hover {
   text-decoration: none;
 }
 
+.container {
+  max-width: 1000px !important;
+}
+
+section {
+  width: 100%;
+}
+
+.swiper__container {
+  max-width: 100%;
+}
 .swiper__container h3 {
   font-size: 16px !important;
 }
@@ -23,11 +34,8 @@ a:hover {
 }
 
 .header {
-  width: 90%;
-  max-width: 1000px;
   margin: 20px auto 0 auto;
   background: #fff;
-  padding: 40px 65px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +48,7 @@ a:hover {
 }
 .header__menu {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 .header__link {
   font-weight: 600;
@@ -51,8 +59,6 @@ a:hover {
 }
 
 .hero {
-  width: 90%;
-  max-width: 1000px;
   margin: auto;
 }
 .hero__info {
@@ -194,10 +200,7 @@ a:hover {
 
 .trabajos {
   background: #0d0e26;
-  width: 90%;
-  max-width: 1000px;
   margin: auto;
-  padding: 40px 65px;
 }
 .trabajos__header {
   text-align: center;
@@ -221,7 +224,6 @@ a:hover {
 .comentarios {
   background: #f1f1f1;
   padding: 40px 0 40px 65px;
-  width: 90%;
   max-width: 1000px;
   margin: auto;
   text-align: center;
@@ -284,7 +286,6 @@ a:hover {
 }
 
 .footer {
-  width: 90%;
   max-width: 1000px;
   margin: auto;
   text-align: center;
@@ -326,7 +327,6 @@ a:hover {
 
 .ventana {
   display: none;
-  width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 100;
