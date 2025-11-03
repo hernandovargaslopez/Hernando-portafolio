@@ -9855,12 +9855,19 @@
 	Swiper.use(modules);
 
 	const galeria = document.querySelector('#trabajos');
-	const ventaTrabajo = document.getElementById('ventana-trabajos');
 
 
 	const datos = [
 		{
 			id: '1',
+			titulo: 'Diseño y desarrollo de la plataforma principal de IDECA',
+			parrafo: 'Lideré el diseño UI/UX y el desarrollo frontend de la página principal de IDECA, garantizando una experiencia de usuario clara, moderna y accesible. El proyecto integró lineamientos institucionales, optimización visual y una arquitectura centrada en la usabilidad para facilitar el acceso a los servicios y datos geoespaciales de Bogotá.',
+			url: 'https://analitica.ideca.gov.co/IDECA/plataforma_integral/',
+			urlText: 'IDECA - Plataforma Integral',
+			imagenes: []
+		},
+		{
+			id: '2',
 			titulo: 'Diseño de interfaz para Scotiabank Canadá',
 			parrafo: 'Integración de funcionalidades clave, la alineación con la identidad visual institucional y el cumplimiento de estándares de accesibilidad y usabilidad. Todo el proceso se orientó a ofrecer soluciones digitales intuitivas, coherentes y adaptadas a las exigencias del sector financiero.',
 			url: 'https://www.scotiabank.com/ca/en/personal/investing/financial-advisor.html',
@@ -9868,7 +9875,7 @@
 			imagenes: []
 		},
 		{
-			id: '2',
+			id: '3',
 			titulo: 'Rediseño y Optimización Web para Portales Financieros en dynamic.ca',
 			parrafo: 'Desarrollo y rediseño de sitios web con un enfoque especializado en portales transaccionales y plataformas de fondos de inversión, priorizando la experiencia del usuario, la seguridad y la eficiencia operativa.',
 			url: 'https://dynamic.ca/en.html',
@@ -9881,7 +9888,7 @@
 			]
 		},
 		{
-			id: '3',
+			id: '4',
 			titulo: 'Implementación de Interfaces Web para el Diccionario Cartográfico (Igac)',
 			parrafo: 'creación de soluciones digitales accesibles y funcionales, alineadas con los lineamientos técnicos y visuales de la institución. Se trabajó en la construcción de interfaces intuitivas, con foco en la usabilidad y la optimización de la experiencia del usuario dentro del entorno web institucional.',
 			url: 'https://diccionario.igac.gov.co/',
@@ -9889,7 +9896,7 @@
 			imagenes: []
 		},
 		{
-			id: '4',
+			id: '5',
 			titulo: 'Proyecto Front-End y Diseño Visual para Expediciones IGAC',
 			parrafo: 'Desarrollo del front-end y diseño de la plataforma web "Expediciones IGAC", una iniciativa del Instituto Geográfico Agustín Codazzi orientada a divulgar contenido geográfico y educativo. Se trabajó en la conceptualización visual, diseño de interfaz y experiencia de usuario, así como en la implementación técnica mediante tecnologías web como HTML, CSS y JavaScript. ',
 			url: '',
@@ -9897,7 +9904,7 @@
 			imagenes: []
 		},
 		{
-			id: '5',
+			id: '6',
 			titulo: 'Liderazgo de Producto y Rediseño Integral de KienyKe.com',
 			parrafo: 'Participación como líder de producto en el rediseño estratégico de KienyKe.com, uno de los medios digitales más relevantes del país. Junto a un equipo multidisciplinario, se coordinó la renovación completa de la arquitectura de información, experiencia de usuario (UX) e interfaz visual (UI), alineando el producto con las nuevas necesidades editoriales, tecnológicas y de audiencia. El proceso incluyó la definición de requerimientos funcionales, priorización de funcionalidades, validación con usuarios y acompañamiento continuo al equipo de diseño y desarrollo para garantizar una implementación eficiente y coherente con la identidad de la marca.',
 			url: '',
@@ -9905,7 +9912,7 @@
 			imagenes: []
 		},
 		{
-			id: '6',
+			id: '7',
 			titulo: 'Diseño y Desarrollo Web para el Festival de los Sentidos – KienyKe.com',
 			parrafo: 'Diseño y desarrollo del sitio web oficial del Festival de los Sentidos, un evento insignia de KienyKe.com orientado a la innovación, el periodismo y la transformación digital. El proyecto incluyó la creación de una experiencia digital inmersiva, accesible y alineada con la identidad del festival. Se diseñó una interfaz moderna y funcional para la difusión de agenda, transmisión en vivo, registro de asistentes y contenido multimedia. El enfoque estuvo en facilitar la navegación, optimizar la visibilidad del evento y fortalecer su presencia digital como plataforma de encuentro entre medios, tecnología y sociedad.',
 			url: '',
@@ -9914,72 +9921,67 @@
 		},
 	];
 
+	const modalTrabajo = new bootstrap.Modal(document.getElementById('modalTrabajo'));
+	const ventaTrabajo = document.getElementById('modalTrabajo');
+
 	galeria.addEventListener('click', (e) => {
-		e.preventDefault();
-		const trabajoClickeado = e.target.closest('.trabajos__trabajo');
-		if(trabajoClickeado) {
-			const id = (trabajoClickeado.dataset.id);
-			
-			const trabajoActivo = datos.filter(trabajo => {
-				if(trabajo.id == id){
-					return trabajo;
-				}
-			});
-			
-			const {titulo, parrafo, url, urlText, imagenes} = trabajoActivo[0];
+	  e.preventDefault();
+	  const trabajoClickeado = e.target.closest('.trabajos__trabajo');
+	  if (trabajoClickeado) {
+	    const id = trabajoClickeado.dataset.id;
+	    const trabajoActivo = datos.find(trabajo => trabajo.id == id);
+	    if (!trabajoActivo) return;
 
-			const swiperContainer =  ventaTrabajo.querySelector('.swiper-container');
-			const swiperContenedor = ventaTrabajo.querySelector('.swiper-wrapper');
-			swiperContenedor.innerHTML = '';
-			const btnVerGaleria = ventaTrabajo.querySelector('.btn-primary');
+	    const { titulo, parrafo, url, urlText, imagenes } = trabajoActivo;
 
-			if(imagenes.length !== 0) {
-				btnVerGaleria.classList.remove('d-none');
+	    const swiperContainer = ventaTrabajo.querySelector('.swiper-container');
+	    const swiperWrapper = ventaTrabajo.querySelector('.swiper-wrapper');
+	    const btnVerGaleria = ventaTrabajo.querySelector('.ver-galeria');
+	    const imgPrincipal = ventaTrabajo.querySelector('.ventana__imagen');
 
-				btnVerGaleria.addEventListener('click', () => {
-					ventaTrabajo.querySelector('.swiper-container').scrollIntoView({
-						behavior: "smooth",
-						inline: "start",
-						block: "nearest"
-					});
-				});
+	    // Actualiza texto e imagen
+	    ventaTrabajo.querySelector('.ventana__titulo').innerText = titulo;
+	    ventaTrabajo.querySelector('.ventana__parrafo').innerText = parrafo;
+	    ventaTrabajo.querySelector('.url').href = url;
+	    ventaTrabajo.querySelector('.url').innerText = urlText;
+	    imgPrincipal.src = trabajoClickeado.querySelector('img').src;
 
-				destruirSwiper();
-				swiperContainer.style.minWidth = '100%';
-				imagenes.forEach(url => {
-					const slide = document.createElement('div');
-					const image = document.createElement('img');
-					image.src = url;
-					slide.classList.add('swiper-slide');
-					slide.append(image);
-					
-					ventaTrabajo.querySelector('.swiper-wrapper').append(slide);
-				});
-				iniciarSwiper();
-			} else {
-				swiperContainer.style.minWidth = '0';
-				btnVerGaleria.classList.add('d-none');			
-			}
+	    // Configura galería
+	    swiperWrapper.innerHTML = '';
+	    if (imagenes.length) {
+	      swiperContainer.classList.remove('d-none');
+	      btnVerGaleria.classList.remove('d-none');
+	      
+	      imagenes.forEach(url => {
+	        const slide = document.createElement('div');
+	        slide.classList.add('swiper-slide');
+	        const image = document.createElement('img');
+	        image.src = url;
+	        image.classList.add('w-100');
+	        slide.append(image);
+	        swiperWrapper.append(slide);
+	      });
 
-			ventaTrabajo.querySelector('.ventana__titulo').innerText = titulo;
-			ventaTrabajo.querySelector('.ventana__parrafo').innerText = parrafo;
-			ventaTrabajo.querySelector('.url').href = url;
-			ventaTrabajo.querySelector('.url').innerHTML = urlText;
-			ventaTrabajo.querySelector('.ventana__imagen').src = trabajoClickeado.querySelector('img').src;
-			ventaTrabajo.querySelector('.ventana__imagen').classList.add('p-2');
-			
-			const existingClone = document.querySelector('.ventana__imagen--cloned');
-			if (existingClone) {
-				existingClone.remove();
-			}
-			const clone = trabajoClickeado.querySelector('img').cloneNode(true);
-			clone.classList.add('ventana__imagen--cloned');
-			ventaTrabajo.querySelector('.ventana__imagen').before(clone);
-			
+	      destruirSwiper();
+	      iniciarSwiper();
 
-			ventaTrabajo.classList.add('ventana--active');	
-		}
+	      btnVerGaleria.onclick = () => {
+	        swiperContainer.scrollIntoView({
+	          behavior: "smooth",
+	          block: "nearest",
+	          inline: "start"
+	        });
+	      };
+	    } else {
+	      swiperContainer.classList.add('d-none');
+	      btnVerGaleria.classList.add('d-none');
+	    }
+
+	    // Abre el modal de Bootstrap
+	    modalTrabajo.show();
+	  }
 	});
+
 
 
 
@@ -16429,4 +16431,3 @@
 	});
 
 })();
-//# sourceMappingURL=bundle.js.map
