@@ -196,6 +196,9 @@ section {
   }
 }
 @media (max-width: 576px) {
+  .hero__burbuja--naranja {
+    left: 0;
+  }
   .hero__burbuja--azul {
     right: 0px;
   }
