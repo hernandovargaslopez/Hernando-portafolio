@@ -16430,4 +16430,16 @@
 		swiper.autoplay.start();
 	});
 
+	const mockup = document.querySelector('.position-absolute img');
+	const scrolleable = document.querySelector('.trabajos__trabajo .image');
+
+	function igualarAltura() {
+		if (mockup && scrolleable) {
+			scrolleable.style.height = `${mockup.clientHeight - 25}px`;
+		}
+	}
+
+	window.addEventListener('load', igualarAltura);
+	window.addEventListener('resize', igualarAltura);
+
 })();

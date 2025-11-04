@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -221,14 +222,82 @@ section {
   margin-bottom: 10px;
 }
 .trabajos__trabajo {
+  display: block;
   opacity: 0;
   transition: 1.5s ease all;
+  /* versión scrolleable */
 }
 .trabajos__trabajo--visible {
   opacity: 1;
 }
+.trabajos__trabajo.scrolleable .image {
+  height: 70vh;
+  overflow: hidden;
+  transition: 0.3s ease;
+  /* cuando el cursor entra */
+  /* scrollbar personalizado */
+}
+.trabajos__trabajo.scrolleable .image:hover {
+  overflow-y: auto;
+  cursor: grab;
+}
+.trabajos__trabajo.scrolleable .image::-webkit-scrollbar {
+  width: 6px;
+}
+.trabajos__trabajo.scrolleable .image::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
 .trabajos__imagen {
   width: 100%;
+  display: block;
+}
+
+.contenedor-pantalla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d0e26;
+}
+.contenedor-pantalla .card {
+  position: relative;
+  /* Imagen de fondo scrolleable */
+  /* Imagen superior decorativa */
+}
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable {
+  display: block;
+  position: relative;
+  z-index: 1; /* asegúrate de que esté por debajo de la otra imagen */
+}
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable .image {
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+  /* Activar scroll al hacer hover */
+  /* Scrollbar personalizado */
+}
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable .image:hover {
+  overflow-y: auto;
+  cursor: grab;
+}
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable .image::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable .image::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable .image img.trabajos__imagen {
+  display: block;
+  width: 100%;
+  min-height: 100%; /* más alto → se puede scrollear */
+  object-fit: cover;
+  object-position: top;
+}
+.contenedor-pantalla .card .position-absolute {
+  z-index: 2;
+  pointer-events: none; /* clave: deja pasar el scroll al fondo */
 }
 
 .swiper-pagination {
