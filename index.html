@@ -15,7 +15,7 @@
 		<link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
 		<title>Portafolio Hernando Enrique Vargas López</title>
 	</head>
-	<body class="container p-0">
+	<body class="container">
 		<div class="d-flex flex-wrap justify-content-center p-0">
 			<header class="header w-100 d-flex justify-content-end px-3 py-4 px-sm-5 pt-sm-5 pb-sm-0">
 				<nav class="header__menu">
@@ -116,11 +116,11 @@
 					<div class="m-auto rounded-circle overflow-hidden">
 						<img class="hero__foto p-0" src="./img/hero.png" alt="" />
 					</div>
-					<div class="hero__burbuja hero__burbuja--naranja hero__burbuja--active">
+					<div class="hero__burbuja px-3 py-2 hero__burbuja--naranja hero__burbuja--active">
 						+5 <br />
 						Experiencias laborales certificadas
 					</div>
-					<div class="hero__burbuja hero__burbuja--azul">
+					<div class="hero__burbuja px-3 py-2 hero__burbuja--azul">
 						+20 <br />
 						Trabajos realizados
 					</div>
@@ -128,7 +128,7 @@
 			</section>
 			<section class="swiper__container bg-white opacity-50 small">
 				<!-- Swiper -->
-				<div class="swiper__detalles position-relative overflow-hidden text-center py-5">
+				<div class="swiper__detalles position-relative overflow-hidden text-center py-4">
 					<div class="swiper-wrapper">
 						<!-- Slide 1 -->
 						<div class="swiper-slide px-5">
@@ -172,47 +172,53 @@
 				</div>
 			</section>
 			<section class="trabajos px-3 py-3" id="trabajos">
-				<div class="trabajos__header text-center">
-					<h2 class="trabajos__titulo">Algunos de mis trabajos</h2>
+				<div class="trabajos__header text-center mb-3">
+					<h2 class="h3 trabajos__titulo">Algunos de mis trabajos</h2>
 				</div>
 				<div class="trabajos__imagenes row">
 					<div class="position-relative mb-3">
 						<div class="contenedor-pantalla">
-							<div class="col-12 col-md-11 me-auto mb-4">
-								<div class="card bg-transparent border-0 overflow-hidden position-relative">
+							<div class="col-12 me-auto mb-4">
+								<div class="card bg-transparent border-0 position-relative">
 									<a href="#" class="trabajos__trabajo scrolleable w-100" data-id="1">
 										<div class="image">
 											<img src="./img/trabajo-8.png" class="trabajos__imagen" alt="" />
 										</div>
 									</a>
-									<div class="position-absolute w-100 overflow-hidden start-50 translate-middle-x">
+									<div id="firstImage" class="position-absolute w-100 start-50 translate-middle-x">
 										<img class="w-100" src="./img/11677015.png" alt="">
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="position-absolute d-none d-md-flex z-2 end-0 bottom-0 mb-5 col-12 col-md-3 d-flex justify-content-center">
-							<div class="w-75">
-								<img src="./img/apple-iphone-air-mockup-01.png" class="trabajos__imagen" alt="" />
+						<div class="phone-image box right position-relative position-md-absolute z-2 col-6 col-md-3 d-flex justify-content-center">
+							<div class="w-75 position-relative">
+								<!-- Mockup -->
+								<img src="./img/apple-iphone-air-mockup-01.png" class="trabajos__imagen shadowed w-100" alt="Mockup iPhone" />
+
+								<!-- Burbuja -->
+								<div class="burbuja rounded-pill px-3 py-2 small text-white position-absolute start-0 translate-middle-x">
+									Diseño responsivo
+								</div>
 							</div>
 						</div>
 					</div>
-					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="1">
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="2">
 						<img src="./img/trabajo-1.png" class="trabajos__imagen" alt="" />
 					</a>
-					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="2">
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="3">
 						<img src="./img/trabajo-2.png" class="trabajos__imagen" alt="" />
 					</a>
-					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="3">
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="4">
 						<img src="./img/trabajo-3.png" class="trabajos__imagen" alt="" />
 					</a>
-					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="4">
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="5">
 						<img src="./img/trabajo-4.png" class="trabajos__imagen" alt="" />
 					</a>
-					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="5">
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="6">
 						<img src="./img/trabajo-5.png" class="trabajos__imagen" alt="" />
 					</a>
-					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="6">
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="7">
 						<img src="./img/trabajo-7.png" class="trabajos__imagen" alt="" />
 					</a>
 				</div>
@@ -221,60 +227,6 @@
 				<div class="comentarios__header">
 					<h2 class="comentarios__titulo">Comentarios de mis clientes</h2>
 					<p class="comentarios__subtitulo">Esto es lo que opinan algunos de mis clientes sobre mi trabajo</p>
-				</div>
-				<div class="comentarios__slider" id="slider">
-					<div class="comentarios__review">
-						<div class="comentarios__contenedor-foto">
-							<img src="./img/review-1.jpg" class="comentarios__foto" alt="" />
-						</div>
-						<div class="comentarios__contenedor-textos">
-							<p class="comentarios__texto">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum purus dui, et viverra
-								velit accumsan ut.
-							</p>
-							<p class="comentarios__autor">John Doe</p>
-							<p class="comentarios__empresa">Nombre de la empresa</p>
-						</div>
-					</div>
-					<div class="comentarios__review">
-						<div class="comentarios__contenedor-foto">
-							<img src="./img/review-2.jpg" class="comentarios__foto" alt="" />
-						</div>
-						<div class="comentarios__contenedor-textos">
-							<p class="comentarios__texto">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum purus dui, et viverra
-								velit accumsan ut.
-							</p>
-							<p class="comentarios__autor">John Doe</p>
-							<p class="comentarios__empresa">Nombre de la empresa</p>
-						</div>
-					</div>
-					<div class="comentarios__review">
-						<div class="comentarios__contenedor-foto">
-							<img src="./img/review-3.jpg" class="comentarios__foto" alt="" />
-						</div>
-						<div class="comentarios__contenedor-textos">
-							<p class="comentarios__texto">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum purus dui, et viverra
-								velit accumsan ut.
-							</p>
-							<p class="comentarios__autor">John Doe</p>
-							<p class="comentarios__empresa">Nombre de la empresa</p>
-						</div>
-					</div>
-					<div class="comentarios__review">
-						<div class="comentarios__contenedor-foto">
-							<img src="./img/review-4.jpg" class="comentarios__foto" alt="" />
-						</div>
-						<div class="comentarios__contenedor-textos">
-							<p class="comentarios__texto">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum purus dui, et viverra
-								velit accumsan ut.
-							</p>
-							<p class="comentarios__autor">John Doe</p>
-							<p class="comentarios__empresa">Nombre de la empresa</p>
-						</div>
-					</div>
 				</div>
 			</section>
 			<footer class="footer p-3">
@@ -379,6 +331,24 @@
 					</div>
 				</div>
 			</div>
+			<script>
+				// Detectar visibilidad en el viewport
+				const boxes = document.querySelectorAll('.box');
+				
+
+				const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					console.log(boxes)
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					} else {
+						entry.target.classList.remove('visible');
+					}
+				});
+				}, { threshold: 0.5 });
+
+				boxes.forEach(box => observer.observe(box));
+			</script>
 
 
 		</div>

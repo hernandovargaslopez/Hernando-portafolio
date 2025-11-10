@@ -9880,12 +9880,7 @@
 			parrafo: 'Desarrollo y rediseño de sitios web con un enfoque especializado en portales transaccionales y plataformas de fondos de inversión, priorizando la experiencia del usuario, la seguridad y la eficiencia operativa.',
 			url: 'https://dynamic.ca/en.html',
 			urlText: 'Ver Más',
-			imagenes: [
-				"img/trabajo-2a.png",
-				"img/trabajo-2b.png",
-				"img/trabajo-2c.png",
-				"img/trabajo-2d.png"
-			]
+			imagenes: []
 		},
 		{
 			id: '4',
@@ -10028,38 +10023,7 @@
 		}
 	});
 
-	const slider = document.querySelector('#slider');
-
-	let seEstaClickeando = false;
-	let movimientoInicial;
-	let scrollLeft;
-
-	const clickeando = (e) => {
-		seEstaClickeando = true;
-
-		movimientoInicial = e.pageX - slider.offsetLeft;
-		scrollLeft = slider.scrollLeft;
-	};
-
-	const moviendo = (e) => {
-		if(!seEstaClickeando) {
-			return;
-		}
-
-		const espaciado = e.pageX - slider.offsetLeft;
-		const distanciaRecorrida = espaciado - movimientoInicial;
-		slider.scrollLeft = scrollLeft - distanciaRecorrida;
-	};
-
-	const levantando = (e) => {
-		seEstaClickeando = false;
-	};
-
-	slider.addEventListener('mousedown', clickeando);
-
-	slider.addEventListener('mousemove', moviendo);
-
-	slider.addEventListener('mouseup', levantando);
+	document.querySelector('#slider');
 
 	const btnAbrirCorreo = document.querySelectorAll('[data-action="abrir-ventana-correo"]');
 	const ventanaCorreo = document.querySelector('#ventana-correo');
@@ -16434,10 +16398,17 @@
 	const scrolleable = document.querySelector('.trabajos__trabajo .image');
 
 	function igualarAltura() {
-		if (mockup && scrolleable) {
-			scrolleable.style.height = `${mockup.clientHeight - 25}px`;
-		}
+	  let offset = 25;
+	  
+	  if (window.innerWidth < 576) {
+	    offset = 10;
+	  }
+
+	  if (mockup && scrolleable) {
+	    scrolleable.style.height = `${mockup.clientHeight - offset}px`;
+	  }
 	}
+
 
 	window.addEventListener('load', igualarAltura);
 	window.addEventListener('resize', igualarAltura);
