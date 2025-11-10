@@ -288,6 +288,30 @@ section {
   position: relative;
   z-index: 1; /* asegúrate de que esté por debajo de la otra imagen */
 }
+.contenedor-pantalla .card .trabajos__trabajo.scrolleable.trabajos__trabajo--visible::before {
+  content: "⬇ Desplázate";
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 20px;
+  opacity: 1;
+  animation: desaparecer 5s ease forwards;
+  animation-delay: 1s;
+  pointer-events: none;
+}
+@keyframes desaparecer {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
 .contenedor-pantalla .card .trabajos__trabajo.scrolleable .image {
   position: relative;
   margin-top: 20px;

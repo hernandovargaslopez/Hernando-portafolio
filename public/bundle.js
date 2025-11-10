@@ -9884,10 +9884,10 @@
 		},
 		{
 			id: '4',
-			titulo: 'Comisión Colombiana del espacio',
-			parrafo: 'Desarrollo y rediseño de sitios web con un enfoque especializado en portales transaccionales y plataformas de fondos de inversión, priorizando la experiencia del usuario, la seguridad y la eficiencia operativa.',
+			titulo: 'Comisión Colombiana del Espacio',
+			parrafo: 'Diseño, desarrollo y estructuración del sitio web oficial de la Comisión Colombiana del Espacio (CCE), entidad encargada de coordinar las políticas y estrategias nacionales en materia espacial. El proyecto incluyó la creación de una arquitectura de información clara y jerarquizada, la implementación de una interfaz moderna, accesible y alineada con los lineamientos institucionales del IGAC y el Gobierno Digital, así como la optimización de la experiencia de usuario para la divulgación de iniciativas, programas y recursos del sector espacial colombiano.',
 			url: 'https://cce.igac.gov.co/',
-			urlText: 'Ver Más',
+			urlText: 'Comisión Colombiana del Espacio',
 			imagenes: []
 		},
 		{
