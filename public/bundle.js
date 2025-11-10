@@ -9884,6 +9884,14 @@
 		},
 		{
 			id: '4',
+			titulo: 'Comisión Colombiana del espacio',
+			parrafo: 'Desarrollo y rediseño de sitios web con un enfoque especializado en portales transaccionales y plataformas de fondos de inversión, priorizando la experiencia del usuario, la seguridad y la eficiencia operativa.',
+			url: 'https://cce.igac.gov.co/',
+			urlText: 'Ver Más',
+			imagenes: []
+		},
+		{
+			id: '5',
 			titulo: 'Implementación de Interfaces Web para el Diccionario Cartográfico (Igac)',
 			parrafo: 'creación de soluciones digitales accesibles y funcionales, alineadas con los lineamientos técnicos y visuales de la institución. Se trabajó en la construcción de interfaces intuitivas, con foco en la usabilidad y la optimización de la experiencia del usuario dentro del entorno web institucional.',
 			url: 'https://diccionario.igac.gov.co/',
@@ -9891,7 +9899,7 @@
 			imagenes: []
 		},
 		{
-			id: '5',
+			id: '6',
 			titulo: 'Proyecto Front-End y Diseño Visual para Expediciones IGAC',
 			parrafo: 'Desarrollo del front-end y diseño de la plataforma web "Expediciones IGAC", una iniciativa del Instituto Geográfico Agustín Codazzi orientada a divulgar contenido geográfico y educativo. Se trabajó en la conceptualización visual, diseño de interfaz y experiencia de usuario, así como en la implementación técnica mediante tecnologías web como HTML, CSS y JavaScript. ',
 			url: '',
@@ -9899,7 +9907,7 @@
 			imagenes: []
 		},
 		{
-			id: '6',
+			id: '7',
 			titulo: 'Liderazgo de Producto y Rediseño Integral de KienyKe.com',
 			parrafo: 'Participación como líder de producto en el rediseño estratégico de KienyKe.com, uno de los medios digitales más relevantes del país. Junto a un equipo multidisciplinario, se coordinó la renovación completa de la arquitectura de información, experiencia de usuario (UX) e interfaz visual (UI), alineando el producto con las nuevas necesidades editoriales, tecnológicas y de audiencia. El proceso incluyó la definición de requerimientos funcionales, priorización de funcionalidades, validación con usuarios y acompañamiento continuo al equipo de diseño y desarrollo para garantizar una implementación eficiente y coherente con la identidad de la marca.',
 			url: '',
@@ -9907,7 +9915,7 @@
 			imagenes: []
 		},
 		{
-			id: '7',
+			id: '8',
 			titulo: 'Diseño y Desarrollo Web para el Festival de los Sentidos – KienyKe.com',
 			parrafo: 'Diseño y desarrollo del sitio web oficial del Festival de los Sentidos, un evento insignia de KienyKe.com orientado a la innovación, el periodismo y la transformación digital. El proyecto incluyó la creación de una experiencia digital inmersiva, accesible y alineada con la identidad del festival. Se diseñó una interfaz moderna y funcional para la difusión de agenda, transmisión en vivo, registro de asistentes y contenido multimedia. El enfoque estuvo en facilitar la navegación, optimizar la visibilidad del evento y fortalecer su presencia digital como plataforma de encuentro entre medios, tecnología y sociedad.',
 			url: '',
@@ -9930,16 +9938,50 @@
 	    const { titulo, parrafo, url, urlText, imagenes } = trabajoActivo;
 
 	    const swiperContainer = ventaTrabajo.querySelector('.swiper-container');
-	    const swiperWrapper = ventaTrabajo.querySelector('.swiper-wrapper');
-	    const btnVerGaleria = ventaTrabajo.querySelector('.ver-galeria');
-	    const imgPrincipal = ventaTrabajo.querySelector('.ventana__imagen');
+	const swiperWrapper = ventaTrabajo.querySelector('.swiper-wrapper');
+	const btnVerGaleria = ventaTrabajo.querySelector('.ver-galeria');
+	let imgPrincipal = ventaTrabajo.querySelector('.ventana__imagen');
 
-	    // Actualiza texto e imagen
-	    ventaTrabajo.querySelector('.ventana__titulo').innerText = titulo;
-	    ventaTrabajo.querySelector('.ventana__parrafo').innerText = parrafo;
-	    ventaTrabajo.querySelector('.url').href = url;
-	    ventaTrabajo.querySelector('.url').innerText = urlText;
-	    imgPrincipal.src = trabajoClickeado.querySelector('img').src;
+	// Actualiza texto e imagen
+	ventaTrabajo.querySelector('.ventana__titulo').innerText = titulo;
+	ventaTrabajo.querySelector('.ventana__parrafo').innerText = parrafo;
+	ventaTrabajo.querySelector('.url').href = url;
+	ventaTrabajo.querySelector('.url').innerText = urlText;
+
+	// Detectar si el elemento clickeado tiene un video o una imagen
+	const mediaElement = trabajoClickeado.querySelector('video, img');
+
+	if (mediaElement) {
+	  // Si es video, reemplazar el tag <img> por <video> con <source>
+	  if (mediaElement.tagName.toLowerCase() === 'video') {
+	    const nuevoVideo = document.createElement('video');
+	    nuevoVideo.className = 'ventana__imagen';
+	    nuevoVideo.autoplay = true;
+	    nuevoVideo.loop = true;
+	    nuevoVideo.muted = true;
+	    nuevoVideo.playsInline = true;
+
+	    const source = document.createElement('source');
+	    source.src = mediaElement.querySelector('source') 
+	      ? mediaElement.querySelector('source').src 
+	      : mediaElement.src; // Por compatibilidad
+	    source.type = 'video/mp4';
+
+	    nuevoVideo.appendChild(source);
+
+	    imgPrincipal.replaceWith(nuevoVideo);
+	  } else {
+	    // Si es imagen, asegurar que exista un <img> y actualizar su src
+	    if (imgPrincipal.tagName.toLowerCase() !== 'img') {
+	      const nuevaImg = document.createElement('img');
+	      nuevaImg.className = 'ventana__imagen';
+	      imgPrincipal.replaceWith(nuevaImg);
+	      imgPrincipal = nuevaImg;
+	    }
+	    imgPrincipal.src = mediaElement.src;
+	  }
+	}
+
 
 	    // Configura galería
 	    swiperWrapper.innerHTML = '';

@@ -15,12 +15,14 @@
 		<link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
 		<title>Portafolio Hernando Enrique Vargas López</title>
 	</head>
-	<body class="container">
+	<body class="container pb-3">
 		<div class="d-flex flex-wrap justify-content-center p-0">
 			<header class="header w-100 d-flex justify-content-end px-3 py-4 px-sm-5 pt-sm-5 pb-sm-0">
 				<nav class="header__menu">
-					<a href="#trabajos" class="header__link">Trabajos</a>
-					<a href="#" data-action="abrir-ventana-correo" class="header__link">Contactame</a>
+					<a href="#trabajos" class="btn header__link">Trabajos</a>
+					<button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#ventana-correo">
+						Contáctame
+					</button>
 				</nav>
 			</header>
 			<section class="hero bg-white row">
@@ -112,7 +114,7 @@
 					</div>
 				</div>
 				
-				<div class="hero__contenedor-foto d-flex align-items-center col-12 col-sm-4 p-5 p-sm-3 p-lg-5">
+				<div class="hero__contenedor-foto d-flex align-items-center col-12 col-sm-4 p-5 pt-3 p-sm-3 p-lg-5">
 					<div class="m-auto rounded-circle overflow-hidden">
 						<img class="hero__foto p-0" src="./img/hero.png" alt="" />
 					</div>
@@ -162,7 +164,7 @@
 	
 						<!-- Slide 6 -->
 						<div class="swiper-slide px-5">
-						<h3>Diseño Web Responsive</h3>
+						<h3>Diseño web responsivo</h3>
 						<p>Diseño sitios web que se adaptan perfectamente a cualquier dispositivo, optimizando la experiencia desde móviles hasta pantallas grandes. Trabajo con principios de diseño fluido y media queries para asegurar accesibilidad visual.</p>
 						</div>
 					</div>
@@ -210,15 +212,29 @@
 						<img src="./img/trabajo-2.png" class="trabajos__imagen" alt="" />
 					</a>
 					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="4">
-						<img src="./img/trabajo-3.png" class="trabajos__imagen" alt="" />
+						<video 
+							class="trabajos__imagen"
+							autoplay 
+							muted 
+							loop 
+							playsinline 
+							webkit-playsinline
+							preload="auto"
+						>
+							<source src="./img/comision.mp4" type="video/mp4">
+							Tu navegador no soporta la reproducción de video.
+						</video>
 					</a>
 					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="5">
-						<img src="./img/trabajo-4.png" class="trabajos__imagen" alt="" />
+						<img src="./img/trabajo-3.png" class="trabajos__imagen" alt="" />
 					</a>
 					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="6">
-						<img src="./img/trabajo-5.png" class="trabajos__imagen" alt="" />
+						<img src="./img/trabajo-4.png" class="trabajos__imagen" alt="" />
 					</a>
 					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="7">
+						<img src="./img/trabajo-5.png" class="trabajos__imagen" alt="" />
+					</a>
+					<a href="#" class="trabajos__trabajo col-md-6 mb-3" data-id="8">
 						<img src="./img/trabajo-7.png" class="trabajos__imagen" alt="" />
 					</a>
 				</div>
@@ -231,7 +247,7 @@
 			</section>
 			<footer class="footer p-3">
 				<div class="correo text-start">
-					<h3 class="footer__titulo">Contactame:</h3>
+					<h3 class="footer__titulo">Contáctame:</h3>
 					<p>hernan182h@hotmail.com</p>
 				</div>
 				<div class="footer__redes">
@@ -249,7 +265,7 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" class="footer__red footer__red--email" data-action="abrir-ventana-correo">
+					<button type="button" class="border-0 footer__red footer__red--email" data-bs-toggle="modal" data-bs-target="#ventana-correo">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="16"
@@ -262,31 +278,29 @@
 								d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
 							/>
 						</svg>
-					</a>
+					</button>
 				</div>
 			</footer>
-			<section class="ventana" id="ventana-correo">
-				<div class="ventana__overlay" data-action="cerrar-ventana">
-					<div class="ventana__correo">
-						<button class="ventana__btn-cerrar" data-action="cerrar-ventana">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								fill="currentColor"
-								class="ventana__icono-cerrar"
-								viewBox="0 0 16 16"
-							>
-								<path
-									d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-								/>
-							</svg>
-						</button>
-						<h3 class="ventana__titulo">Correo Electrónico:</h3>
-						<p class="h4">hernan182h@hotmail.com</p>
+			<!-- Modal Bootstrap -->
+			<div class="modal fade" id="ventana-correo" tabindex="-1" aria-labelledby="ventanaCorreoLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+
+					<!-- Header con botón de cerrar dentro del flujo (más fiable) -->
+					<div class="modal-header">
+						<h5 class="modal-title" id="ventanaCorreoLabel">Correo Electrónico:</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+					</div>
+
+					<!-- Body -->
+					<div class="modal-body text-center py-4">
+						<p class="h4 mb-0">hernan182h@hotmail.com</p>
+					</div>
+
 					</div>
 				</div>
-			</section>
+			</div>
+
 	
 			<!-- Modal de Bootstrap (reemplaza toda tu <section class="ventana..."> ) -->
 			<!-- Modal Bootstrap -->
@@ -309,7 +323,7 @@
 							</div>
 
 							<!-- Columna izquierda (imagen principal + swiper) -->
-							<div class="d-flex flex-column justify-content-between">
+							<div class="d-flex flex-column justify-content-between p-3">
 								
 								<img src="" class="ventana__imagen w-100 p-2 rounded-3" alt="Imagen principal">
 
