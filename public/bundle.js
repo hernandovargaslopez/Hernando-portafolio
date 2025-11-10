@@ -10023,8 +10023,6 @@
 		}
 	});
 
-	document.querySelector('#slider');
-
 	const btnAbrirCorreo = document.querySelectorAll('[data-action="abrir-ventana-correo"]');
 	const ventanaCorreo = document.querySelector('#ventana-correo');
 
