@@ -208,10 +208,10 @@ export const DASHBOARD_CONTENT = {
     intro: "Crafting high-quality digital experiences for over 5 years. I lead product vision from conceptual design to frontend architectural excellence.",
     highlights: "Featured Projects",
     stats: [
-      { label: "Frontend", val: "HTML/CSS/JS", icon: "💻" },
-      { label: "Design", val: "Figma/Adobe", icon: "🎨" },
-      { label: "Strategy", val: "Product Lead", icon: "📊" },
-      { label: "Location", val: "Bogotá / Global", icon: "🌐" }
+      { label: "Frontend", val: "HTML/CSS/JS", icon: "Code" },
+      { label: "Diseño", val: "Figma/Adobe", icon: "Palette" },
+      { label: "Estrategia", val: "Líder de Producto", icon: "TrendingUp" },
+      { label: "Ubicación", val: "Bogotá / Global", icon: "Globe" }
     ],
     experienceBtn: "Review Experience",
     messageBtn: "Send Message",
@@ -280,10 +280,10 @@ export const DASHBOARD_CONTENT = {
     intro: "Creando experiencias digitales de alta calidad por más de 5 años. Lidero la visión del producto desde el diseño conceptual hasta la excelencia arquitectónica front-end.",
     highlights: "Proyectos Destacados",
     stats: [
-      { label: "Frontend", val: "HTML/CSS/JS", icon: "💻" },
-      { label: "Diseño", val: "Figma/Adobe", icon: "🎨" },
-      { label: "Estrategia", val: "Liderazgo de Producto", icon: "📊" },
-      { label: "Ubicación", val: "Bogotá / Global", icon: "🌐" }
+      { label: "Frontend", val: "HTML/CSS/JS", icon: "Code" },
+      { label: "Diseño", val: "Figma/Adobe", icon: "Palette" },
+      { label: "Estrategia", val: "Líder de Producto", icon: "TrendingUp" },
+      { label: "Ubicación", val: "Bogotá / Global", icon: "Globe" }
     ],
     experienceBtn: "Ver Experiencia",
     messageBtn: "Enviar Mensaje",
@@ -343,7 +343,7 @@ export const DASHBOARD_CONTENT = {
         desc: "Diseño y desarrollo del sitio oficial del evento insignia de innovación y periodismo de KienyKe. Experiencia digital inmersiva.",
         tags: ["Eventos", "Inmersivo", "Branding"],
         color: "from-purple-600 to-fuchsia-700",
-        gallery: ["images/trabajo-6.png"]
+        gallery: ["images/trabajo-7.png"]
       }
     ]
   }

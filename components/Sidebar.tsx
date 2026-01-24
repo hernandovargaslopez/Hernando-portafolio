@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppView, Language, Theme } from '../types';
+import { Briefcase, FileText, Languages, Moon, Sun, X } from 'lucide-react';
 
 interface SidebarProps {
   activeView: AppView;
@@ -23,8 +24,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   onClose
 }) => {
   const navItems = [
-    { id: AppView.PORTFOLIO, label: language === Language.EN ? 'Portfolio' : 'Portafolio', icon: '🎨' },
-    { id: AppView.CV, label: language === Language.EN ? 'Resume / CV' : 'Resumen / CV', icon: '📄' },
+    { id: AppView.PORTFOLIO, label: language === Language.EN ? 'Portfolio' : 'Portafolio', icon: Briefcase },
+    { id: AppView.CV, label: language === Language.EN ? 'Resume / CV' : 'Resumen / CV', icon: FileText },
   ];
 
   const isDark = theme === Theme.DARK;
@@ -42,18 +43,12 @@ const Sidebar: React.FC<SidebarProps> = ({
             <div className="w-9 h-9 rounded-lg bg-primary-gradient flex items-center justify-center font-bold text-lg text-white">
               HV
             </div>
-            <span className={`font-bold text-base tracking-tight ${isDark ? 'text-white' : 'text-slate-800'}`}>
-              {language === Language.EN ? 'Portfolio' : 'Portafolio'}
-            </span>
           </div>
           <button 
             onClick={onClose}
-            className="md:hidden p-2 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+            className="md:hidden p-2 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+            <X size={20} strokeWidth={2} />
           </button>
         </div>
 
@@ -70,7 +65,9 @@ const Sidebar: React.FC<SidebarProps> = ({
                     : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
-              <span className="text-lg">{item.icon}</span>
+              <span className="flex items-center justify-center w-6">
+                <item.icon size={18} strokeWidth={2} />
+              </span>
               <span className="font-semibold text-sm">{item.label}</span>
             </button>
           ))}
@@ -89,10 +86,12 @@ const Sidebar: React.FC<SidebarProps> = ({
                }`}
              >
                <div className="flex items-center space-x-3">
-                 <span className="text-lg">{language === Language.EN ? '🇺🇸' : '🇪🇸'}</span>
+                 <span className="flex items-center justify-center w-6">
+                    <Languages size={18} strokeWidth={2} />
+                 </span>
                  <span className="font-semibold text-xs">{language === Language.EN ? 'English' : 'Español'}</span>
                </div>
-               <div className="text-[9px] bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded-full font-bold">
+               <div className="text-[9px] bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-tighter">
                  {language === Language.EN ? 'EN' : 'ES'}
                </div>
              </button>
@@ -106,7 +105,9 @@ const Sidebar: React.FC<SidebarProps> = ({
                }`}
              >
                <div className="flex items-center space-x-3">
-                 <span className="text-lg">{isDark ? '🌙' : '☀️'}</span>
+                 <span className="flex items-center justify-center w-6">
+                    {isDark ? <Moon size={18} strokeWidth={2} /> : <Sun size={18} strokeWidth={2} />}
+                 </span>
                  <span className="font-semibold text-xs">{isDark ? (language === Language.EN ? 'Dark Mode' : 'Modo Oscuro') : (language === Language.EN ? 'Light Mode' : 'Modo Claro')}</span>
                </div>
                <div className={`text-[9px] px-1.5 py-0.5 rounded-full font-bold ${isDark ? 'bg-indigo-500/20 text-indigo-400' : 'bg-amber-500/20 text-amber-600'}`}>
@@ -118,7 +119,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         <div className={`mt-6 pt-6 border-t mb-2 ${isDark ? 'border-[#282c42]' : 'border-slate-200'}`}>
           <div className={`${isDark ? 'bg-[#020305] border border-[#282c42]' : 'bg-slate-100'} rounded-xl p-3`}>
-            <p className="text-[10px] text-slate-500 mb-1">{language === Language.EN ? 'Status' : 'Estado'}</p>
+            <p className="text-[10px] text-slate-500 mb-1 font-bold uppercase tracking-widest">{language === Language.EN ? 'Status' : 'Estado'}</p>
             <div className="flex items-start space-x-2">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse mt-1.5 shrink-0"></div>
               <span className={`text-xs font-semibold leading-tight ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
