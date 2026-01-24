@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { AppView, Language } from '../types';
 import { CV_DATA, DASHBOARD_CONTENT } from '../constants';
@@ -15,6 +14,11 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
 
   const closeGallery = () => setGalleryProject(null);
 
+  // Helper to check if a URL is a video
+  const isVideoFile = (url: string) => {
+    return url.match(/\.(mp4|webm|ogg)$|video/i);
+  };
+
   return (
     <div>
       <div className="animate-in fade-in duration-700 pb-8">
@@ -30,11 +34,11 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
             <div className="flex flex-wrap gap-3 mt-8">
               <button 
                 onClick={() => onNavigate(AppView.CV)}
-                className="px-6 py-3 bg-primary-gradient hover:opacity-90 text-white font-bold rounded-full transition-all shadow-xl shadow-indigo-600/20 active:scale-95 flex items-center"
+                className="px-4 py-1 glass hover:bg-slate-50 dark:hover:bg-[#1a1f2e] text-slate-900 dark:text-white font-bold rounded-full transition-all flex items-center"
               >
                 {content.experienceBtn} <span className="ml-2">📄</span>
               </button>
-              <a href={`mailto:${data.email}`} className="px-6 py-3 glass hover:bg-slate-50 dark:hover:bg-[#1a1f2e] text-slate-900 dark:text-white font-bold rounded-full transition-all flex items-center">
+              <a href={`mailto:${data.email}`} className="px-4 py-1 glass hover:bg-slate-50 dark:hover:bg-[#1a1f2e] text-slate-900 dark:text-white font-bold rounded-full transition-all flex items-center">
                 {content.messageBtn} <span className="ml-2">✉️</span>
               </a>
             </div>
@@ -123,25 +127,29 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
 
               {/* Modal Body */}
               <div className="flex-1 overflow-y-auto p-8 bg-slate-50 dark:bg-[#020305]/80">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {galleryProject.gallery?.map((imgUrl: string, i: number) => (
-                    <div 
-                      key={i} 
-                      className="group relative aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-[#282c42] shadow-lg bg-slate-200 dark:bg-[#10151f]"
-                    >
-                      <img 
-                        src={imgUrl} 
-                        alt={`${galleryProject.title} screenshot ${i+1}`} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                {galleryProject.gallery?.map((itemUrl: string, i: number) => (
+                  <div 
+                    key={i} 
+                    className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-[#282c42] shadow-lg bg-slate-200 dark:bg-[#10151f]"
+                  >
+                    {isVideoFile(itemUrl) ? (
+                      <video 
+                        src={itemUrl} 
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline 
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p className="text-white text-xs font-bold uppercase tracking-wider">
-                          {language === Language.EN ? 'Internal Design' : 'Diseño Interno'} #{i+1}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ) : (
+                      <img 
+                        src={itemUrl} 
+                        alt={`${galleryProject.title} screenshot ${i+1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
+                ))}
                 
                 <div className="mt-8 p-6 glass rounded-2xl border border-slate-200 dark:border-[#282c42]">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wide">

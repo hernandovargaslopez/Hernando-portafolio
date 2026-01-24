@@ -1,4 +1,3 @@
-
 import { CVData, Language } from "./types";
 
 export const MODEL_CHAT = 'gemini-3-pro-preview';
@@ -20,7 +19,7 @@ export const CV_DATA: Record<Language, CVData> = {
         role: "UX Developer",
         period: "29/03/2023 - Present",
         highlights: [
-          "Development and redesign of web pages focused on transactional portals.",
+          "Development and redesign of web pages focused on transactional portals and dynamic.ca.",
           "Created specialized digital experiences for business advising.",
           "Bridged the gap between UX design requirements and technical implementation."
         ]
@@ -30,9 +29,9 @@ export const CV_DATA: Record<Language, CVData> = {
         role: "Front-End Developer",
         period: "30/08/2021 - 31/12/2024",
         highlights: [
-          "Specialist in HTML, CSS and JavaScript working on the institute's digital environment.",
-          "Optimized web performance and ensured high standards of digital accessibility.",
-          "Maintained complex digital environments for government-scale projects."
+          "Led development for Colombian Space Commission and Cartographic Dictionary interfaces.",
+          "Front-end and Visual Design for 'Expediciones IGAC' educational platform.",
+          "Optimized web performance and ensured high standards of digital accessibility."
         ]
       },
       {
@@ -47,12 +46,12 @@ export const CV_DATA: Record<Language, CVData> = {
       },
       {
         company: "Kienyke.com",
-        role: "Web Designer",
+        role: "Web Designer & Product Lead",
         period: "01/02/2018 - 20/05/2021",
         highlights: [
-          "Digital product and project manager aligned with new technological trends.",
-          "Provided solutions for successful project execution in a fast-paced digital media environment.",
-          "Managed cross-functional design and technology workflows."
+          "Product Lead for the strategic integral redesign of KienyKe.com.",
+          "Design and development for 'Festival de los Sentidos' official event site.",
+          "Digital product and project manager aligned with new technological trends."
         ]
       },
       {
@@ -113,7 +112,7 @@ export const CV_DATA: Record<Language, CVData> = {
         role: "Desarrollador UX",
         period: "29/03/2023 - Actualidad",
         highlights: [
-          "Desarrollo y rediseño de páginas web enfocadas en portales transaccionales.",
+          "Desarrollo y rediseño de páginas web enfocadas en portales transaccionales y dynamic.ca.",
           "Creación de experiencias digitales especializadas para asesoría empresarial.",
           "Cierre de brecha entre los requisitos de diseño UX y la implementación técnica."
         ]
@@ -123,9 +122,9 @@ export const CV_DATA: Record<Language, CVData> = {
         role: "Desarrollador Front-End",
         period: "30/08/2021 - 31/12/2024",
         highlights: [
-          "Especialista en HTML, CSS y JavaScript trabajando en el entorno digital del instituto.",
-          "Optimización del rendimiento web y garantía de altos estándares de accesibilidad digital.",
-          "Mantenimiento de entornos digitales complejos para proyectos a escala gubernamental."
+          "Liderazgo en el desarrollo para la Comisión Colombiana del Espacio y Diccionario Cartográfico.",
+          "Proyecto Front-End y Diseño Visual para la plataforma educativa 'Expediciones IGAC'.",
+          "Optimización del rendimiento web y garantía de altos estándares de accesibilidad digital."
         ]
       },
       {
@@ -140,12 +139,12 @@ export const CV_DATA: Record<Language, CVData> = {
       },
       {
         company: "Kienyke.com",
-        role: "Diseñador Web",
+        role: "Diseñador Web y Líder de Producto",
         period: "01/02/2018 - 20/05/2021",
         highlights: [
-          "Gestor de productos y proyectos digitales, alineado con nuevas tendencias tecnológicas.",
-          "Suministro de soluciones para la ejecución exitosa de proyectos en un entorno de medios digitales acelerado.",
-          "Gestión de flujos de trabajo de diseño y tecnología multifuncionales."
+          "Líder de producto en el rediseño estratégico integral de KienyKe.com.",
+          "Diseño y desarrollo web para el sitio oficial del 'Festival de los Sentidos'.",
+          "Gestor de productos y proyectos digitales, alineado con nuevas tendencias tecnológicas."
         ]
       },
       {
@@ -193,11 +192,21 @@ export const CV_DATA: Record<Language, CVData> = {
   }
 };
 
+
+
+
+
+
+
+
+
+
+
 export const DASHBOARD_CONTENT = {
   [Language.EN]: {
     available: "Available for New Opportunities",
     intro: "Crafting high-quality digital experiences for over 5 years. I lead product vision from conceptual design to frontend architectural excellence.",
-    highlights: "Project Highlights",
+    highlights: "Featured Projects",
     stats: [
       { label: "Frontend", val: "HTML/CSS/JS", icon: "💻" },
       { label: "Design", val: "Figma/Adobe", icon: "🎨" },
@@ -209,40 +218,60 @@ export const DASHBOARD_CONTENT = {
     viewGallery: "View Gallery",
     projects: [
       {
-        title: "Transactional Banking Portal",
-        category: "UX Development @ Scotiabank",
-        desc: "Redesigned complex financial workflows into intuitive transactional interfaces for business users.",
-        tags: ["UX", "React", "Finance"],
-        color: "from-red-500 to-rose-600",
-        gallery: [
-          "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
-        ]
+        title: "Interface Design for Scotiabank Canada",
+        category: "Fintech, UX Development",
+        desc: "Integration of key functionalities, alignment with the institutional visual identity, and compliance with accessibility and usability standards.",
+        tags: ["Fintech", "UX", "Security"],
+        color: "from-blue-600 to-indigo-700",
+        gallery: ["images/trabajo-1.png"]
       },
       {
-        title: "IGAC Digital Environment",
-        category: "Frontend @ IGAC",
-        desc: "Maintained and optimized the national geographic institute's high-traffic digital infrastructure.",
-        tags: ["Performance", "JS", "Accessibility"],
-        color: "from-blue-500 to-cyan-600",
-        gallery: [
-          "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop"
-        ]
+        title: "Financial Portals Optimization @ dynamic.ca",
+        category: "Fintech, UX Development",
+        desc: "Web design and optimization for financial portals and investment fund platforms, focusing on security, efficiency, and user experience.",
+        tags: ["Fintech", "UX", "Security"],
+        color: "from-blue-600 to-indigo-700",
+        gallery: ["images/trabajo-2.png"]
       },
       {
-        title: "User-Centered Applications",
-        category: "UI/UX @ Grupo Sancho",
-        desc: "Conceptualized and built responsive web applications using modern CSS architectures and jQuery.",
-        tags: ["UI/UX", "Sass", "jQuery"],
-        color: "from-amber-500 to-orange-600",
-        gallery: [
-          "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop"
-        ]
+        title: "Cartographic Dictionary (IGAC)",
+        category: "Frontend / Accessibility",
+        desc: "Creation of accessible digital solutions and intuitive interfaces for the official Cartographic Dictionary of Colombia.",
+        tags: ["Accessibility", "Frontend", "UI"],
+        color: "from-emerald-500 to-teal-700",
+        gallery: ["images/trabajo-3.png"]
+      },
+      {
+        title: "Colombian Space Commission (CCE)",
+        category: "Government / Web Architecture",
+        desc: "Official website for CCE. Hierarchical information architecture and modern interface aligned with Digital Government guidelines.",
+        tags: ["GovTech", "Architecture", "Design"],
+        color: "from-slate-700 to-slate-900",
+        gallery: ["images/comision.mp4"]
+      },      
+      {
+        title: "Expediciones IGAC Platform",
+        category: "Educational / Visual Design",
+        desc: "Web platform development for geographic and educational content dissemination. Conceptual visual design and technical implementation.",
+        tags: ["Education", "Visual Design", "JS"],
+        color: "from-orange-500 to-amber-600",
+        gallery: ["images/trabajo-4.png"]
+      },
+      {
+        title: "KienyKe.com Integral Redesign",
+        category: "Product Leadership / UI-UX",
+        desc: "Strategic redesign of the news portal. Coordination of information architecture, UX, and UI for one of the country's top digital media.",
+        tags: ["Leadership", "Product", "Media"],
+        color: "from-red-600 to-rose-700",
+        gallery: ["images/trabajo-5.png"]
+      },
+      {
+        title: "Festival de los Sentidos Site",
+        category: "Event Design / Development",
+        desc: "Design and development of the official site for KienyKe's flagship innovation and journalism event. Immersive digital experience.",
+        tags: ["Events", "Immersive", "Branding"],
+        color: "from-purple-600 to-fuchsia-700",
+        gallery: ["images/trabajo-6.png"]
       }
     ]
   },
@@ -253,48 +282,68 @@ export const DASHBOARD_CONTENT = {
     stats: [
       { label: "Frontend", val: "HTML/CSS/JS", icon: "💻" },
       { label: "Diseño", val: "Figma/Adobe", icon: "🎨" },
-      { label: "Estrategia", val: "Líder de Producto", icon: "📊" },
+      { label: "Estrategia", val: "Liderazgo de Producto", icon: "📊" },
       { label: "Ubicación", val: "Bogotá / Global", icon: "🌐" }
     ],
-    experienceBtn: "Revisar Experiencia",
+    experienceBtn: "Ver Experiencia",
     messageBtn: "Enviar Mensaje",
     viewGallery: "Ver Galería",
     projects: [
       {
-        title: "Portal Bancario Transaccional",
-        category: "Desarrollo UX @ Scotiabank",
-        desc: "Rediseño de flujos financieros complejos en interfaces transaccionales intuitivas para usuarios empresariales.",
-        tags: ["UX", "React", "Finanzas"],
-        color: "from-red-500 to-rose-600",
-        gallery: [
-          "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
-        ]
+        title: "Diseño de Interfaz para Scotiabank Canadá",
+        category: "Fintech, Desarrollo UX",
+        desc: "Integración de funcionalidades clave, alineamiento con la identidad visual institucional y cumplimiento de estándares de accesibilidad y usabilidad.",
+        tags: ["Fintech", "UX", "Seguridad"],
+        color: "from-blue-600 to-indigo-700",
+        gallery: ["images/trabajo-1.png"]
       },
       {
-        title: "Entorno Digital IGAC",
-        category: "Front-End @ IGAC",
-        desc: "Mantenimiento y optimización de la infraestructura digital de alto tráfico del instituto geográfico nacional.",
-        tags: ["Rendimiento", "JS", "Accesibilidad"],
-        color: "from-blue-500 to-cyan-600",
-        gallery: [
-          "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop"
-        ]
+        title: "Optimización de Portales Financieros @ dynamic.ca",
+        category: "Fintech, Desarrollo UX",
+        desc: "Diseño web y optimización de portales financieros y plataformas de fondos de inversión, con enfoque en seguridad, eficiencia y experiencia de usuario.",
+        tags: ["Fintech", "UX", "Seguridad"],
+        color: "from-blue-600 to-indigo-700",
+        gallery: ["images/trabajo-2.png"]
       },
       {
-        title: "Aplicaciones Centradas en el Usuario",
-        category: "UI/UX @ Grupo Sancho",
-        desc: "Conceptualización y construcción de aplicaciones web responsivas utilizando arquitecturas CSS modernas y jQuery.",
-        tags: ["UI/UX", "Sass", "jQuery"],
-        color: "from-amber-500 to-orange-600",
-        gallery: [
-          "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1000&auto=format&fit=crop",
-          "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop"
-        ]
+        title: "Diccionario Cartográfico (IGAC)",
+        category: "Frontend / Accesibilidad",
+        desc: "Creación de soluciones digitales accesibles e interfaces intuitivas para el Diccionario Cartográfico oficial de Colombia.",
+        tags: ["Accesibilidad", "Frontend", "UI"],
+        color: "from-emerald-500 to-teal-700",
+        gallery: ["images/trabajo-3.png"]
+      },
+      {
+        title: "Comisión Colombiana del Espacio (CCE)",
+        category: "Gobierno / Arquitectura Web",
+        desc: "Sitio web oficial de la CCE. Arquitectura de información jerárquica e interfaz moderna alineada con lineamientos de Gobierno Digital.",
+        tags: ["GovTech", "Arquitectura", "Diseño"],
+        color: "from-slate-700 to-slate-900",
+        gallery: ["images/comision.mp4"]
+      },      
+      {
+        title: "Plataforma Expediciones IGAC",
+        category: "Educativo / Diseño Visual",
+        desc: "Desarrollo de plataforma web para la difusión de contenidos geográficos y educativos. Diseño visual conceptual e implementación técnica.",
+        tags: ["Educación", "Diseño Visual", "JS"],
+        color: "from-orange-500 to-amber-600",
+        gallery: ["images/trabajo-4.png"]
+      },
+      {
+        title: "Rediseño Integral KienyKe.com",
+        category: "Liderazgo de Producto / UI-UX",
+        desc: "Rediseño estratégico del portal de noticias. Coordinación de arquitectura de información, UX y UI para uno de los principales medios digitales del país.",
+        tags: ["Liderazgo", "Producto", "Medios"],
+        color: "from-red-600 to-rose-700",
+        gallery: ["images/trabajo-5.png"]
+      },
+      {
+        title: "Sitio Festival de los Sentidos",
+        category: "Diseño y Desarrollo de Eventos",
+        desc: "Diseño y desarrollo del sitio oficial del evento insignia de innovación y periodismo de KienyKe. Experiencia digital inmersiva.",
+        tags: ["Eventos", "Inmersivo", "Branding"],
+        color: "from-purple-600 to-fuchsia-700",
+        gallery: ["images/trabajo-6.png"]
       }
     ]
   }
