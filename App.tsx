@@ -11,7 +11,40 @@ const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const cvHeroImage = "https://app.leonardo.ai/img/new-background.webp"; // estilo profesional / limpio
 
-  const heroImage = activeView === AppView.CV ? cvHeroImage : null;    
+  const heroImage = activeView === AppView.CV ? cvHeroImage : null; 
+  // Map AppView to Hash string
+  const viewToHash: Record<AppView, string> = {
+    [AppView.PORTFOLIO]: '#/portfolio',
+    [AppView.CV]: '#/cv'
+  };
+
+  // Map Hash string back to AppView
+  const hashToView: Record<string, AppView> = {
+    '#/portfolio': AppView.PORTFOLIO,
+    '#/cv': AppView.CV
+  };
+
+  // Sync state with URL hash on initial load
+  useEffect(() => {
+    const currentHash = window.location.hash;
+    if (currentHash && hashToView[currentHash]) {
+      setActiveView(hashToView[currentHash]);
+    } else {
+      // Default to portfolio and update hash
+      window.location.hash = viewToHash[AppView.PORTFOLIO];
+    }
+
+    // Listen for hash changes (browser back/forward)
+    const handleHashChange = () => {
+      const newHash = window.location.hash;
+      if (hashToView[newHash]) {
+        setActiveView(hashToView[newHash]);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);   
 
   useEffect(() => {
     if (theme === Theme.DARK) {
@@ -23,6 +56,7 @@ const App: React.FC = () => {
 
   // Close sidebar on view change (mobile)
   const handleViewChange = (view: AppView) => {
+    window.location.hash = viewToHash[view];
     setActiveView(view);
     setIsSidebarOpen(false);
   };
