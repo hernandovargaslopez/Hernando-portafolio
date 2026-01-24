@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AppView, Language, Theme } from '../types';
 
@@ -9,6 +8,8 @@ interface SidebarProps {
   onLanguageChange: (lang: Language) => void;
   theme: Theme;
   onThemeChange: (theme: Theme) => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ 
@@ -17,7 +18,9 @@ const Sidebar: React.FC<SidebarProps> = ({
   language, 
   onLanguageChange,
   theme,
-  onThemeChange
+  onThemeChange,
+  isOpen = false,
+  onClose
 }) => {
   const navItems = [
     { id: AppView.PORTFOLIO, label: language === Language.EN ? 'Portfolio' : 'Portafolio', icon: '🎨' },
@@ -27,15 +30,31 @@ const Sidebar: React.FC<SidebarProps> = ({
   const isDark = theme === Theme.DARK;
 
   return (
-    <aside className={`glass border-r hidden md:flex flex-col transition-colors duration-300 ${isDark ? '' : 'border-slate-200 bg-white/80'}`}>
+    <aside className={`
+      fixed md:sticky top-0 left-0 h-full z-50 w-64 glass border-r flex flex-col transition-all duration-300 
+      ${isDark ? 'border-[#282c42]' : 'border-slate-200 bg-white/95'}
+      ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+    `}>
       <div className="p-4 flex flex-col h-full">
-        <div className="flex items-center space-x-2 mb-8 mt-2 px-2">
-          <div className="w-9 h-9 rounded-lg bg-primary-gradient flex items-center justify-center font-bold text-lg text-white">
-            HV
+        {/* Header with Close button for mobile */}
+        <div className="flex items-center justify-between mb-8 mt-2 px-2">
+          <div className="flex items-center space-x-2">
+            <div className="w-9 h-9 rounded-lg bg-primary-gradient flex items-center justify-center font-bold text-lg text-white">
+              HV
+            </div>
+            <span className={`font-bold text-base tracking-tight ${isDark ? 'text-white' : 'text-slate-800'}`}>
+              {language === Language.EN ? 'Portfolio' : 'Portafolio'}
+            </span>
           </div>
-          <span className={`font-bold text-base tracking-tight ${isDark ? 'text-white' : 'text-slate-800'}`}>
-            {language === Language.EN ? 'Portfolio' : 'Portafolio'}
-          </span>
+          <button 
+            onClick={onClose}
+            className="md:hidden p-2 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
 
         <nav className="space-y-1.5 flex-1">
@@ -43,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             <button
               key={item.id}
               onClick={() => onViewChange(item.id)}
-              className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-full transition-all duration-200 ${
+              className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl transition-all duration-200 ${
                 activeView === item.id
                   ? 'bg-primary-gradient text-white shadow-lg shadow-indigo-600/20'
                   : isDark 
@@ -63,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({
            <div className="space-y-2">
              <button
                onClick={() => onLanguageChange(language === Language.EN ? Language.ES : Language.EN)}
-               className={`w-full flex items-center justify-between px-3 py-2.5 rounded-full border transition-all ${
+               className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all ${
                  isDark 
                  ? 'bg-[#020305] border-[#282c42] text-slate-300 hover:text-white hover:border-indigo-500/50' 
                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-indigo-300'
@@ -80,7 +99,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
              <button
                onClick={() => onThemeChange(isDark ? Theme.LIGHT : Theme.DARK)}
-               className={`w-full flex items-center justify-between px-3 py-2.5 rounded-full border transition-all ${
+               className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all ${
                  isDark 
                  ? 'bg-[#020305] border-[#282c42] text-slate-300 hover:text-white hover:border-indigo-500/50' 
                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-indigo-300'
@@ -98,7 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         <div className={`mt-6 pt-6 border-t mb-2 ${isDark ? 'border-[#282c42]' : 'border-slate-200'}`}>
-          <div className={`${isDark ? 'bg-[#020305] border border-[#282c42]' : 'bg-slate-100'} p-4 rounded-2xl p-3`}>
+          <div className={`${isDark ? 'bg-[#020305] border border-[#282c42]' : 'bg-slate-100'} rounded-xl p-3`}>
             <p className="text-[10px] text-slate-500 mb-1">{language === Language.EN ? 'Status' : 'Estado'}</p>
             <div className="flex items-start space-x-2">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse mt-1.5 shrink-0"></div>
