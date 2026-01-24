@@ -12,7 +12,7 @@ export const CV_DATA: Record<Language, CVData> = {
     location: "Bogotá / Colombia & Remote",
     whatsapp: "+57 300 800 4819",
     portfolioUrl: "https://hernandovargaslopez.github.io/Hernando-portafolio/",
-    summary: "Professional in Graphic Design and Audiovisual Media from Politécnico Grancolombiano University. I have 5 years of experience in developing and leading digital products, as well as designing and building websites and applications. Specialist in HTML, CSS, and JavaScript, dedicated to creating high-quality digital experiences.",
+    summary: "Professional in Graphic Design and Audiovisual Media from Politécnico Grancolombiano University. I have 8 years of experience in developing and leading digital products, as well as designing and building websites and applications. Specialist in HTML, CSS, and JavaScript, dedicated to creating high-quality digital experiences.",
     experience: [
       {
         company: "Scotiabank",
@@ -105,7 +105,7 @@ export const CV_DATA: Record<Language, CVData> = {
     location: "Bogotá / Colombia y Remoto",
     whatsapp: "+57 300 800 4819",
     portfolioUrl: "https://hernandovargaslopez.github.io/Hernando-portafolio/",
-    summary: "Profesional en Diseño Gráfico y Medios Audiovisuales de la Universidad Politécnico Grancolombiano. Tengo 5 años de experiencia en el desarrollo y liderazgo de productos digitales, así como en el diseño y construcción de sitios web y aplicaciones. Especialista en HTML, CSS y JavaScript, dedicado a crear experiencias digitales de alta calidad.",
+    summary: "Profesional en Diseño Gráfico y Medios Audiovisuales de la Universidad Politécnico Grancolombiano. Tengo 8 años de experiencia en el desarrollo y liderazgo de productos digitales, así como en el diseño y construcción de sitios web y aplicaciones. Especialista en HTML, CSS y JavaScript, dedicado a crear experiencias digitales de alta calidad.",
     experience: [
       {
         company: "Scotiabank",
@@ -205,7 +205,7 @@ export const CV_DATA: Record<Language, CVData> = {
 export const DASHBOARD_CONTENT = {
   [Language.EN]: {
     available: "Available for New Opportunities",
-    intro: "Crafting high-quality digital experiences for over 5 years. I lead product vision from conceptual design to frontend architectural excellence.",
+    intro: "Crafting high-quality digital experiences for over 8 years. I lead product vision from conceptual design to frontend architectural excellence.",
     highlights: "Featured Projects",
     stats: [
       { label: "Frontend", val: "HTML/CSS/JS", icon: "Code" },
@@ -277,7 +277,7 @@ export const DASHBOARD_CONTENT = {
   },
   [Language.ES]: {
     available: "Disponible para Nuevas Oportunidades",
-    intro: "Creando experiencias digitales de alta calidad por más de 5 años. Lidero la visión del producto desde el diseño conceptual hasta la excelencia arquitectónica front-end.",
+    intro: "Creando experiencias digitales de alta calidad por más de 8 años. Lidero la visión del producto desde el diseño conceptual hasta la excelencia arquitectónica front-end.",
     highlights: "Proyectos Destacados",
     stats: [
       { label: "Frontend", val: "HTML/CSS/JS", icon: "Code" },

@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    base: '/portafolio2026/', // 👈 ESTA ES LA LÍNEA IMPORTANTE
+    base: '/Hernando-portafolio/', // 👈 ESTA ES LA LÍNEA IMPORTANTE
     server: {
       port: 3000,
       host: '0.0.0.0',
