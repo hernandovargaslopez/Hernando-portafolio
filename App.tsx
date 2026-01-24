@@ -9,6 +9,9 @@ const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>(Language.ES);
   const [theme, setTheme] = useState<Theme>(Theme.DARK);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const cvHeroImage = "https://app.leonardo.ai/img/new-background.webp"; // estilo profesional / limpio
+
+  const heroImage = activeView === AppView.CV ? cvHeroImage : null;    
 
   useEffect(() => {
     if (theme === Theme.DARK) {
@@ -82,6 +85,15 @@ const App: React.FC = () => {
         </header>
 
         <main className="flex-1 relative overflow-y-auto">
+          <div>
+          {activeView === AppView.CV && (
+            <img 
+              src={heroImage} 
+              alt="Hernando Vargas Hero" 
+              className="w-full h-full object-cover h-[200px]"
+            />
+          )}
+        </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 h-full">
             {renderView()}
           </div>
