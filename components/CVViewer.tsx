@@ -52,14 +52,16 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
       </section>
 
       {/* Summary */}
-      <section className="glass p-6 rounded-[1.5rem]">
-        <h2 className="text-lg font-bold mb-3 text-slate-900 dark:text-white flex items-center">
-          <span className="mr-3 text-indigo-500"><UserCircle size={24} strokeWidth={1.75} /></span> {labels.summary}
-        </h2>
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
-          {data.summary}
-        </p>
-      </section>
+      <div className="shiny-border-container shadow-xl shadow-indigo-500/5">
+        <section className="glass p-6 rounded-[1.5rem]">
+          <h2 className="text-lg font-bold mb-3 text-slate-900 dark:text-white flex items-center">
+            <span className="mr-3 text-indigo-500"><UserCircle size={24} strokeWidth={1.75} /></span> {labels.summary}
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
+            {data.summary}
+          </p>
+        </section>
+      </div>
 
       <div className="grid md:grid-cols-12 gap-8">
         {/* Main Column */}
