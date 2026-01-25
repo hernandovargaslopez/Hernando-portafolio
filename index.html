@@ -62,6 +62,41 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* Shiny Spinning Border Effect */
+    @keyframes shiny-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .shiny-border-container {
+      position: relative;
+      padding: 1.5px; /* El grosor del "borde" de luz */
+      overflow: hidden;
+      border-radius: 1.5rem;
+      z-index: 0;
+    }
+
+    .shiny-border-container::before {
+      content: '';
+      position: absolute;
+      top: -150%;
+      left: -150%;
+      width: 400%;
+      height: 400%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 30%,
+        var(--accent) 45%,
+        var(--accent-secondary) 50%,
+        var(--accent-maestro) 55%,
+        transparent 70%,
+        transparent 100%
+      );
+      animation: shiny-spin 12s linear infinite;
+      z-index: -1;
+    }
+
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -100,7 +135,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/Hernando-portafolio/assets/index-JQPAtUWj.js"></script>
+  <script type="module" crossorigin src="/Hernando-portafolio/assets/index-DtWS_wWi.js"></script>
 </head>
 <body>
   <div id="root"></div>
