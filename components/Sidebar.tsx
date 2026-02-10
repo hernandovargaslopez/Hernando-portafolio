@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { AppView, Language, Theme } from '../types';
-import { Briefcase, FileText, Languages, Moon, Sun, X } from 'lucide-react';
+import { Briefcase, FileText, Languages, Moon, Sun, X, Download } from 'lucide-react';
 
 interface SidebarProps {
   activeView: AppView;
@@ -30,19 +31,40 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const isDark = theme === Theme.DARK;
 
+  const handleDownload = (): void => {
+    const fileName =
+      language === Language.EN
+        ? 'HojadevidahernandovargasL2026EN.pdf'
+        : 'HojadevidahernandovargasL2026ES.pdf';
+
+    const link = document.createElement('a');
+    link.href = `${import.meta.env.BASE_URL}assets/${fileName}`;
+    link.download = fileName;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+
+
+
   return (
     <aside className={`
       fixed md:sticky top-0 left-0 h-full z-50 w-64 glass border-r flex flex-col transition-all duration-300 
       ${isDark ? 'border-[#282c42]' : 'border-slate-200 bg-white/95'}
       ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
     `}>
-      <div className="p-4 flex flex-col h-full">
+      <div className="p-4 flex flex-col h-full overflow-y-auto custom-scrollbar">
         {/* Header with Close button for mobile */}
         <div className="flex items-center justify-between mb-8 mt-2 px-2">
           <div className="flex items-center space-x-2">
             <div className="w-9 h-9 rounded-lg bg-primary-gradient flex items-center justify-center font-bold text-lg text-white">
               HV
             </div>
+            <span className={`font-bold text-base tracking-tight ${isDark ? 'text-white' : 'text-slate-800'}`}>
+              {language === Language.EN ? 'Portfolio' : 'Portafolio'}
+            </span>
           </div>
           <button 
             onClick={onClose}
@@ -71,6 +93,18 @@ const Sidebar: React.FC<SidebarProps> = ({
               <span className="font-semibold text-sm">{item.label}</span>
             </button>
           ))}
+
+          {/* Download Button */}
+          <button
+            onClick={handleDownload}
+            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl transition-all duration-300 mt-4 border ${
+              isDark 
+              ? 'bg-indigo-500/10 border-indigo-500/30 text-indigo-400 hover:bg-indigo-600 hover:text-white hover:border-indigo-600' 
+              : 'bg-indigo-50 border-indigo-200 text-indigo-600 hover:bg-indigo-600 hover:text-white hover:border-indigo-600'
+            }`}
+          >
+            <span className="font-semibold text-sm">{language === Language.EN ? 'Download CV' : 'Descargar CV'}</span>
+          </button>
         </nav>
 
         <div className={`mt-6 pt-6 border-t ${isDark ? 'border-[#282c42]' : 'border-slate-200'}`}>
