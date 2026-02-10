@@ -208,7 +208,17 @@ export const DASHBOARD_CONTENT = {
     intro: "Crafting high-quality digital experiences for over 8 years. I lead product vision from conceptual design to frontend architectural excellence.",
     highlights: "Featured Projects",
     stats: [
-      { label: "Frontend", val: "HTML/CSS/JS", icon: "Code" },
+      {
+        label: "Front-End",
+        val: (
+          <>
+            React / Angular / CMS
+            <br />
+            HTML / CSS / JavaScript
+          </>
+        ),
+        icon: "Code"
+      },
       { label: "Diseño", val: "Figma/Adobe", icon: "Palette" },
       { label: "Estrategia", val: "Líder de Producto", icon: "TrendingUp" },
       { label: "Ubicación", val: "Bogotá / Global", icon: "Globe" }
@@ -280,7 +290,16 @@ export const DASHBOARD_CONTENT = {
     intro: "Creando experiencias digitales de alta calidad por más de 8 años. Lidero la visión del producto desde el diseño conceptual hasta la excelencia arquitectónica front-end.",
     highlights: "Proyectos Destacados",
     stats: [
-      { label: "Frontend", val: "HTML/CSS/JS", icon: "Code" },
+      { label: "Frontend", 
+        val: (
+          <>
+            React / Angular / CMS
+            <br />
+            HTML / CSS / JavaScript
+          </>
+        ), 
+        icon: "Code" 
+      },
       { label: "Diseño", val: "Figma/Adobe", icon: "Palette" },
       { label: "Estrategia", val: "Líder de Producto", icon: "TrendingUp" },
       { label: "Ubicación", val: "Bogotá / Global", icon: "Globe" }

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { AppView, Language } from '../types';
-import { CV_DATA, DASHBOARD_CONTENT } from '../constants';
+import { CV_DATA, DASHBOARD_CONTENT } from "../constants";
+
 import * as LucideIcons from 'lucide-react';
 import { ArrowLeft, ArrowRight, FileText, Mail, X, ChevronRight } from 'lucide-react';
 
