@@ -31,9 +31,9 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
       {/* Header */}
       <section className="text-center space-y-3 pt-4">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">{data.name}</h1>
-        <p className="text-xl font-bold text-primary-gradient tracking-wide inline-block">{data.title}</p>
+        <p className="text-xl font-bold text-[#bf1820] tracking-wide inline-block">{data.title}</p>
         <div className="flex flex-wrap justify-center gap-3 pt-2">
-          <a href={`mailto:${data.email}`} className="glass px-3 py-1.5 rounded-full text-xs text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors flex items-center gap-2">
+          <a href={`mailto:${data.email}`} className="glass px-3 py-1.5 rounded-full text-xs text-slate-600 dark:text-slate-300 hover:text-[#bf1820] dark:hover:text-white transition-colors flex items-center gap-2">
             <Mail size={12} strokeWidth={2.5} /> {data.email}
           </a>
           <span className="glass px-3 py-1.5 rounded-full text-xs text-slate-600 dark:text-slate-300 flex items-center gap-2">
@@ -44,7 +44,7 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
           </span>
           <button 
             onClick={() => onNavigate(AppView.PORTFOLIO)} 
-            className="glass px-3 py-1.5 rounded-full text-xs text-indigo-600 dark:text-indigo-300 hover:text-indigo-800 dark:hover:text-indigo-100 transition-colors font-semibold flex items-center gap-2"
+            className="glass px-3 py-1.5 rounded-full text-xs text-[#bf1820] dark:text-[#bf1820]/70 hover:text-[#bf1820] dark:hover:text-[#bf1820]/80 transition-colors font-semibold flex items-center gap-2"
           >
             <Globe size={12} strokeWidth={2.5} /> {labels.portfolio}
           </button>
@@ -52,10 +52,10 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
       </section>
 
       {/* Summary */}
-      <div className="shiny-border-container shadow-xl shadow-indigo-500/5">
+      <div className="shiny-border-container shadow-xl shadow-[#bf1820]/5">
         <section className="glass p-6 rounded-[1.5rem]">
           <h2 className="text-lg font-bold mb-3 text-slate-900 dark:text-white flex items-center">
-            <span className="mr-3 text-indigo-500"><UserCircle size={24} strokeWidth={1.75} /></span> {labels.summary}
+            <span className="mr-3 text-[#bf1820]"><UserCircle size={24} strokeWidth={1.75} /></span> {labels.summary}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
             {data.summary}
@@ -68,16 +68,16 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
         <div className="md:col-span-8 space-y-8">
           <section>
             <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-[#282c42] pb-2 mb-6 flex items-center">
-              <span className="mr-3 text-indigo-500"><Briefcase size={22} strokeWidth={1.75} /></span> {labels.experience}
+              <span className="mr-3 text-[#bf1820]"><Briefcase size={22} strokeWidth={1.75} /></span> {labels.experience}
             </h2>
             <div className="space-y-8">
               {data.experience.map((job, idx) => (
                 <div key={idx} className="relative pl-6 border-l border-slate-200 dark:border-[#282c42]">
-                  <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-primary-gradient shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+                  <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-primary-gradient"></div>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-1">
                     <div>
                       <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">{job.role}</h3>
-                      <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm">{job.company}</p>
+                      <p className="text-[#bf1820] dark:text-[#bf1820]/70 font-semibold text-sm">{job.company}</p>
                     </div>
                     <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono glass px-2 py-1 rounded-lg self-start sm:self-center">
                       {job.period}
@@ -86,7 +86,7 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
                   <ul className="space-y-2 mt-3">
                     {job.highlights.map((point, i) => (
                       <li key={i} className="text-slate-600 dark:text-slate-400 text-xs flex items-start leading-relaxed">
-                        <span className="text-indigo-500 mr-2 mt-1.5 w-1 h-1 rounded-full shrink-0 bg-indigo-500"></span>
+                        <span className="text-[#bf1820] mr-2 mt-1.5 w-1 h-1 rounded-full shrink-0 bg-[#bf1820]"></span>
                         {point}
                       </li>
                     ))}
@@ -98,13 +98,13 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-[#282c42] pb-2 mb-6 flex items-center">
-              <span className="mr-3 text-indigo-500"><MessageSquare size={22} strokeWidth={1.75} /></span> {labels.references}
+              <span className="mr-3 text-[#bf1820]"><MessageSquare size={22} strokeWidth={1.75} /></span> {labels.references}
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {data.references.map((ref, i) => (
                 <div key={i} className="glass p-4 rounded-xl">
                   <p className="font-bold text-slate-900 dark:text-white text-sm">{ref.name}</p>
-                  <p className="text-xs text-indigo-600 dark:text-indigo-400 mb-1.5">{ref.role}</p>
+                  <p className="text-xs text-[#bf1820] dark:text-[#bf1820]/70 mb-1.5">{ref.role}</p>
                   <p className="text-[10px] text-slate-500 font-mono break-all">{ref.contact}</p>
                 </div>
               ))}
@@ -116,14 +116,14 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
         <div className="md:col-span-4 space-y-8">
           <section>
             <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center">
-              <span className="mr-3 text-indigo-500"><Wrench size={22} strokeWidth={1.75} /></span> {labels.skills}
+              <span className="mr-3 text-[#bf1820]"><Wrench size={22} strokeWidth={1.75} /></span> {labels.skills}
             </h2>
             <div className="space-y-4">
               <div>
                 <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">{labels.dev}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {data.skills.tech.map((s, i) => (
-                    <span key={i} className="px-2 py-1 bg-indigo-500/10 border border-slate-200 dark:border-[#282c42] text-indigo-700 dark:text-indigo-300 rounded-lg text-[10px] font-semibold">{s}</span>
+                     <span key={i} className="px-2 py-1 bg-[#bf1820]/10 border border-slate-200 dark:border-[#282c42] text-[#bf1820] dark:text-[#bf1820]/70 rounded-lg text-[10px] font-semibold">{s}</span>
                   ))}
                 </div>
               </div>
@@ -148,13 +148,13 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
 
           <section>
             <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center">
-              <span className="mr-3 text-indigo-500"><GraduationCap size={22} strokeWidth={1.75} /></span> {labels.education}
+              <span className="mr-3 text-[#bf1820]"><GraduationCap size={22} strokeWidth={1.75} /></span> {labels.education}
             </h2>
             <div className="space-y-3">
               {data.education.map((edu, i) => (
                 <div key={i} className="glass p-4 rounded-xl transition-transform hover:scale-[1.01]">
                   <p className="font-bold text-slate-900 dark:text-white text-xs leading-tight mb-1">{edu.degree}</p>
-                  <p className="text-[10px] text-indigo-600 dark:text-indigo-400 font-medium">{edu.school}</p>
+                  <p className="text-[10px] text-[#bf1820] dark:text-[#bf1820]/70 font-medium">{edu.school}</p>
                   <p className="text-[9px] text-slate-500 dark:text-slate-500 mt-1 font-mono uppercase tracking-widest">{edu.year}</p>
                 </div>
               ))}
@@ -163,7 +163,7 @@ const CVViewer: React.FC<CVViewerProps> = ({ language, onNavigate }) => {
 
           <section>
             <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center">
-              <span className="mr-3 text-indigo-500"><Globe size={22} strokeWidth={1.75} /></span> {labels.languages}
+              <span className="mr-3 text-[#bf1820]"><Globe size={22} strokeWidth={1.75} /></span> {labels.languages}
             </h2>
             <div className="flex flex-col gap-2">
               {data.languages.map((lang, i) => (

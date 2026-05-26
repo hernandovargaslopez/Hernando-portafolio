@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { AppView, Language, Theme } from '../types';
-import { Briefcase, FileText, Languages, Moon, Sun, X, Download } from 'lucide-react';
+import { Briefcase, FileText, Languages, Moon, Sun, X } from 'lucide-react';
 
 interface SidebarProps {
   activeView: AppView;
@@ -25,29 +25,11 @@ const Sidebar: React.FC<SidebarProps> = ({
   onClose
 }) => {
   const navItems = [
-    { id: AppView.PORTFOLIO, label: language === Language.EN ? 'Portfolio' : 'Portafolio', icon: Briefcase },
     { id: AppView.CV, label: language === Language.EN ? 'Resume / CV' : 'Resumen / CV', icon: FileText },
+    { id: AppView.PORTFOLIO, label: language === Language.EN ? 'Portfolio' : 'Portafolio', icon: Briefcase },
   ];
 
   const isDark = theme === Theme.DARK;
-
-  const handleDownload = (): void => {
-    const fileName =
-      language === Language.EN
-        ? 'HojadevidahernandovargasL2026EN.pdf'
-        : 'HojadevidahernandovargasL2026ES.pdf';
-
-    const link = document.createElement('a');
-    link.href = `${import.meta.env.BASE_URL}assets/${fileName}`;
-    link.download = fileName;
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-
-
 
   return (
     <aside className={`
@@ -59,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         {/* Header with Close button for mobile */}
         <div className="flex items-center justify-between mb-8 mt-2 px-2">
           <div className="flex items-center space-x-2">
-            <div className="w-9 h-9 rounded-lg bg-primary-gradient flex items-center justify-center font-bold text-lg text-white">
+            <div className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg text-white bg-[#1a1f2e]">
               HV
             </div>
             <span className={`font-bold text-base tracking-tight ${isDark ? 'text-white' : 'text-slate-800'}`}>
@@ -81,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               onClick={() => onViewChange(item.id)}
               className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl transition-all duration-200 ${
                 activeView === item.id
-                  ? 'bg-primary-gradient text-white shadow-lg shadow-indigo-600/20'
+                  ? 'bg-primary-gradient text-white shadow-lg shadow-[#bf1820]/20'
                   : isDark 
                     ? 'text-slate-400 hover:bg-[#1a1f2e] hover:text-slate-200'
                     : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
@@ -93,19 +75,8 @@ const Sidebar: React.FC<SidebarProps> = ({
               <span className="font-semibold text-sm">{item.label}</span>
             </button>
           ))}
+         </nav>
 
-          {/* Download Button */}
-          <button
-            onClick={handleDownload}
-            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl transition-all duration-300 mt-4 border ${
-              isDark 
-              ? 'bg-indigo-500/10 border-indigo-500/30 text-indigo-400 hover:bg-indigo-600 hover:text-white hover:border-indigo-600' 
-              : 'bg-indigo-50 border-indigo-200 text-indigo-600 hover:bg-indigo-600 hover:text-white hover:border-indigo-600'
-            }`}
-          >
-            <span className="font-semibold text-sm">{language === Language.EN ? 'Download CV' : 'Descargar CV'}</span>
-          </button>
-        </nav>
 
         <div className={`mt-6 pt-6 border-t ${isDark ? 'border-[#282c42]' : 'border-slate-200'}`}>
            <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-3 px-2">Settings / Ajustes</p>
@@ -115,8 +86,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                onClick={() => onLanguageChange(language === Language.EN ? Language.ES : Language.EN)}
                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all ${
                  isDark 
-                 ? 'bg-[#020305] border-[#282c42] text-slate-300 hover:text-white hover:border-indigo-500/50' 
-                 : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-indigo-300'
+                  ? 'bg-[#020305] border-[#282c42] text-slate-300 hover:text-white hover:border-[#bf1820]/50' 
+                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-[#bf1820]/30'
                }`}
              >
                <div className="flex items-center space-x-3">
@@ -125,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                  </span>
                  <span className="font-semibold text-xs">{language === Language.EN ? 'English' : 'Español'}</span>
                </div>
-               <div className="text-[9px] bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-tighter">
+                <div className="text-[9px] bg-[#bf1820]/20 text-[#bf1820] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-tighter">
                  {language === Language.EN ? 'EN' : 'ES'}
                </div>
              </button>
@@ -134,8 +105,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                onClick={() => onThemeChange(isDark ? Theme.LIGHT : Theme.DARK)}
                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all ${
                  isDark 
-                 ? 'bg-[#020305] border-[#282c42] text-slate-300 hover:text-white hover:border-indigo-500/50' 
-                 : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-indigo-300'
+                  ? 'bg-[#020305] border-[#282c42] text-slate-300 hover:text-white hover:border-[#bf1820]/50' 
+                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-[#bf1820]/30'
                }`}
              >
                <div className="flex items-center space-x-3">
@@ -144,7 +115,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                  </span>
                  <span className="font-semibold text-xs">{isDark ? (language === Language.EN ? 'Dark Mode' : 'Modo Oscuro') : (language === Language.EN ? 'Light Mode' : 'Modo Claro')}</span>
                </div>
-               <div className={`text-[9px] px-1.5 py-0.5 rounded-full font-bold ${isDark ? 'bg-indigo-500/20 text-indigo-400' : 'bg-amber-500/20 text-amber-600'}`}>
+                <div className={`text-[9px] px-1.5 py-0.5 rounded-full font-bold ${isDark ? 'bg-[#bf1820]/20 text-[#bf1820]' : 'bg-amber-500/20 text-amber-600'}`}>
                  {isDark ? 'DARK' : 'LIGHT'}
                </div>
              </button>

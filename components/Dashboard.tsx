@@ -71,7 +71,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
             <p className="h2 text-5xl md:text-6xl font-black mb-4 leading-tight text-slate-900 dark:text-white">
               {data.name.split(' ')[0]} <span className="text-slate-400 dark:text-slate-600">{data.name.split(' ').slice(1).join(' ')}</span>
             </p>
-            <p className="text-xl font-bold text-primary-gradient tracking-wide inline-block">{data.title}</p>
+            <p className="text-xl font-bold text-[#bf1820] tracking-wide inline-block">{data.title}</p>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
               {content.intro}
             </p>
@@ -80,10 +80,10 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
                 onClick={() => onNavigate(AppView.CV)}
                 className="px-6 py-2 glass hover:bg-slate-50 dark:hover:bg-[#1a1f2e] text-slate-900 dark:text-white font-bold rounded-full transition-all flex items-center shadow-sm"
               >
-                {content.experienceBtn} <span className="ml-2 text-indigo-500 opacity-80"><FileText size={16} strokeWidth={2.5} /></span>
+                {content.experienceBtn} <span className="ml-2 text-[#bf1820] opacity-80"><FileText size={16} strokeWidth={2.5} /></span>
               </button>
               <a href={`mailto:${data.email}`} className="px-6 py-2 glass hover:bg-slate-50 dark:hover:bg-[#1a1f2e] text-slate-900 dark:text-white font-bold rounded-full transition-all flex items-center shadow-sm">
-                {content.messageBtn} <span className="ml-2 text-indigo-500 opacity-80"><Mail size={16} strokeWidth={2.5} /></span>
+                {content.messageBtn} <span className="ml-2 text-[#bf1820] opacity-80"><Mail size={16} strokeWidth={2.5} /></span>
               </a>
             </div>
           </div>
@@ -95,14 +95,14 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
             <div className="flex items-center gap-2">
                <button 
                 onClick={prevPage}
-                className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-all active:scale-90"
+                className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-[#bf1820] dark:hover:text-[#bf1820]/70 transition-all active:scale-90"
                 aria-label="Previous Page"
                >
                  <ArrowLeft size={18} strokeWidth={2} />
                </button>
                <button 
                 onClick={nextPage}
-                className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-all active:scale-90"
+                className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-[#bf1820] dark:hover:text-[#bf1820]/70 transition-all active:scale-90"
                 aria-label="Next Page"
                >
                  <ArrowRight size={18} strokeWidth={2} />
@@ -126,7 +126,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
                     {page.map((project, idx) => (
                       <div 
                         key={idx}
-                        className="group relative glass rounded-[2rem] border-slate-200 dark:border-[#282c42] hover:border-indigo-500/50 transition-all duration-500 flex flex-col h-full cursor-default overflow-hidden"
+                        className="group relative glass rounded-[2rem] border-slate-200 dark:border-[#282c42] hover:border-[#bf1820]/50 transition-all duration-500 flex flex-col h-full cursor-default overflow-hidden"
                       >
                         {/* Visual Preview (Top) */}
                         <div className="aspect-video w-full overflow-hidden border dark:border-[#282c42] bg-slate-100 dark:bg-[#10151f] shadow-inner relative">
@@ -152,8 +152,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
 
                         {/* Details (Bottom) */}
                         <div className="flex flex-col flex-1 p-6">
-                          <span className="text-[9px] font-black text-indigo-500 uppercase tracking-[0.2em] mb-2 block">{project.category}</span>
-                          <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white leading-tight group-hover:text-indigo-500 transition-colors">
+                          <span className="text-[9px] font-black text-[#bf1820] uppercase tracking-[0.2em] mb-2 block">{project.category}</span>
+                          <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white leading-tight group-hover:text-[#bf1820] transition-colors">
                             {project.title}
                           </h3>
                           <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-6 line-clamp-3">
@@ -172,7 +172,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
                             className="pt-4 border-t border-slate-200 dark:border-[#282c42] flex items-center justify-between group/btn cursor-pointer mt-auto"
                             onClick={() => setGalleryProject(project)}
                           >
-                            <span className="text-xs font-bold text-slate-500 dark:text-slate-300 group-hover/btn:text-indigo-500 transition-colors">
+                            <span className="text-xs font-bold text-slate-500 dark:text-slate-300 group-hover/btn:text-[#bf1820] transition-colors">
                               {content.viewGallery || (language === Language.EN ? 'View Gallery' : 'Ver Galería')}
                             </span>
                             <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#020305] border border-slate-200 dark:border-[#282c42] flex items-center justify-center text-slate-900 dark:text-white group-hover/btn:bg-primary-gradient group-hover/btn:text-white group-hover/btn:scale-110 transition-all">
@@ -208,8 +208,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
         {/* Expertise Stats */}
         <section className="grid mt-16 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {content.stats.map((stat, i) => (
-            <div key={i} className="glass p-6 rounded-3xl flex items-center gap-5 border-slate-200/50 dark:border-[#282c42]/50 hover:shadow-xl hover:shadow-indigo-500/5 transition-all">
-              <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#020305] border border-slate-200 dark:border-[#282c42] flex items-center justify-center text-indigo-500 shadow-inner">
+            <div key={i} className="glass p-6 rounded-3xl flex items-center gap-5 border-slate-200/50 dark:border-[#282c42]/50 hover:shadow-xl hover:shadow-[#bf1820]/5 transition-all">
+              <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#020305] border border-slate-200 dark:border-[#282c42] flex items-center justify-center text-[#bf1820] shadow-inner">
                 <DynamicIcon name={stat.icon} size={22} strokeWidth={2} />
               </div>
               <div>
@@ -234,7 +234,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate, language }) => {
               <div className="px-10 py-8 border-b border-slate-200 dark:border-[#282c42] flex items-center justify-between bg-white/20 dark:bg-[#10151f]/50">
                 <div>
                   <h3 className="text-3xl font-black text-slate-900 dark:text-white">{galleryProject.title}</h3>
-                  <p className="text-sm font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-widest mt-1">{galleryProject.category}</p>
+                  <p className="text-sm font-bold text-[#bf1820] dark:text-[#bf1820]/70 uppercase tracking-widest mt-1">{galleryProject.category}</p>
                 </div>
                 <button 
                   onClick={closeGallery}

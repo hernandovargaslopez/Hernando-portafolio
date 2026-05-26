@@ -58,7 +58,7 @@ const ImageStudio: React.FC = () => {
           <div 
             onClick={() => fileInputRef.current?.click()}
             className={`relative h-[320px] border-2 border-dashed rounded-2xl flex items-center justify-center cursor-pointer overflow-hidden transition-all ${
-              sourceImage ? 'border-slate-700' : 'border-slate-800 hover:border-indigo-500/50 bg-slate-900/50'
+              sourceImage ? 'border-slate-700' : 'border-slate-800 hover:border-[#bf1820]/50 bg-slate-900/50'
             }`}
           >
             <input 
@@ -90,7 +90,7 @@ const ImageStudio: React.FC = () => {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="e.g., 'Change button to rounded indigo'..."
-              className="w-full h-24 bg-slate-900/50 border border-slate-700 rounded-full p-3 text-sm text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 resize-none transition-all"
+              className="w-full h-24 bg-slate-900/50 border border-slate-700 rounded-full p-3 text-sm text-slate-200 focus:outline-none focus:ring-1 focus:ring-[#bf1820]/50 resize-none transition-all"
             />
             <button
               onClick={handleProcess}
@@ -98,7 +98,7 @@ const ImageStudio: React.FC = () => {
               className={`w-full py-3.5 rounded-full font-bold flex items-center justify-center space-x-2 transition-all ${
                 isProcessing || !sourceImage || !prompt.trim()
                 ? 'bg-slate-800 text-slate-500 cursor-not-allowed'
-                : 'bg-primary-gradient text-white shadow-lg shadow-indigo-600/20 active:scale-[0.98]'
+                : 'bg-primary-gradient text-white shadow-lg shadow-[#bf1820]/20 active:scale-[0.98]'
               }`}
             >
               {isProcessing ? (

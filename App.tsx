@@ -3,13 +3,14 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import CVViewer from './components/CVViewer';
 import { AppView, Language, Theme } from './types';
+import ScrollFrames from './components/ScrollFrames';
 
 const App: React.FC = () => {
-  const [activeView, setActiveView] = useState<AppView>(AppView.PORTFOLIO);
+  const [activeView, setActiveView] = useState<AppView>(AppView.CV);
   const [language, setLanguage] = useState<Language>(Language.ES);
-  const [theme, setTheme] = useState<Theme>(Theme.DARK);
+  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const cvHeroImage = "https://app.leonardo.ai/img/new-background.webp"; // estilo profesional / limpio
+  const cvHeroImage = "./i"; // estilo profesional / limpio
 
   const heroImage = activeView === AppView.CV ? cvHeroImage : null;    
 
@@ -81,16 +82,15 @@ const App: React.FC = () => {
           </button>
         </header>
 
-        <main className="flex-1 relative overflow-y-auto">
+        <main
+          className="flex-1 relative overflow-y-auto"
+          style={{ background: '#efefef' }}
+        >
           <div>
-          {activeView === AppView.CV && (
-            <img 
-              src={heroImage} 
-              alt="Hernando Vargas Hero" 
-              className="w-full h-full object-cover h-[200px]"
-            />
-          )}
-        </div>
+            {activeView === AppView.CV && (
+              <ScrollFrames frameCount={192} language={language} />
+            )}
+          </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 h-full">
             {renderView()}
           </div>

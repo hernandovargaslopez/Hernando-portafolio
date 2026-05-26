@@ -3,6 +3,11 @@ import { CVData, Language } from "./types";
 export const MODEL_CHAT = 'gemini-3-pro-preview';
 export const MODEL_IMAGE = 'gemini-2.5-flash-image';
 
+export const SCROLL_PROMPT: Record<Language, string> = {
+  [Language.EN]: "Start scrolling to explore",
+  [Language.ES]: "Comienza a desplazarte para explorar"
+};
+
 export const CV_DATA: Record<Language, CVData> = {
   [Language.EN]: {
     name: "Hernando Vargas López",
@@ -66,7 +71,7 @@ export const CV_DATA: Record<Language, CVData> = {
       }
     ],
     skills: {
-      tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "Sass", "Scrum", "Accessibility"],
+      tech: ["React", "AEM", "Drupal", "HTML5", "CSS3", "JavaScript", "jQuery", "Sass", "Scrum", "Accessibility"],
       design: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "After Effects"],
       platforms: ["AEM", "Drupal", "WordPress"],
       tools: ["Excel", "Word"]
@@ -159,7 +164,7 @@ export const CV_DATA: Record<Language, CVData> = {
       }
     ],
     skills: {
-      tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "Sass", "Scrum", "Accesibilidad"],
+      tech: ["React", "AEM", "Drupal", "HTML5", "CSS3", "JavaScript", "jQuery", "Sass", "Scrum", "Accessibility"],
       design: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "After Effects"],
       platforms: ["AEM", "Drupal", "WordPress"],
       tools: ["Excel", "Word"]
@@ -232,7 +237,7 @@ export const DASHBOARD_CONTENT = {
         category: "Fintech, UX Development",
         desc: "Integration of key functionalities, alignment with the institutional visual identity, and compliance with accessibility and usability standards.",
         tags: ["Fintech", "UX", "Security"],
-        color: "from-blue-600 to-indigo-700",
+        color: "from-blue-600 to-[#bf1820]",
         gallery: ["images/trabajo-1.png"]
       },
       {
@@ -240,7 +245,7 @@ export const DASHBOARD_CONTENT = {
         category: "Fintech, UX Development",
         desc: "Web design and optimization for financial portals and investment fund platforms, focusing on security, efficiency, and user experience.",
         tags: ["Fintech", "UX", "Security"],
-        color: "from-blue-600 to-indigo-700",
+        color: "from-blue-600 to-[#bf1820]",
         gallery: ["images/trabajo-2.png"]
       },
       {
@@ -313,7 +318,7 @@ export const DASHBOARD_CONTENT = {
         category: "Fintech, Desarrollo UX",
         desc: "Integración de funcionalidades clave, alineamiento con la identidad visual institucional y cumplimiento de estándares de accesibilidad y usabilidad.",
         tags: ["Fintech", "UX", "Seguridad"],
-        color: "from-blue-600 to-indigo-700",
+        color: "from-blue-600 to-[#bf1820]",
         gallery: ["images/trabajo-1.png"]
       },
       {
@@ -321,7 +326,7 @@ export const DASHBOARD_CONTENT = {
         category: "Fintech, Desarrollo UX",
         desc: "Diseño web y optimización de portales financieros y plataformas de fondos de inversión, con enfoque en seguridad, eficiencia y experiencia de usuario.",
         tags: ["Fintech", "UX", "Seguridad"],
-        color: "from-blue-600 to-indigo-700",
+        color: "from-blue-600 to-[#bf1820]",
         gallery: ["images/trabajo-2.png"]
       },
       {

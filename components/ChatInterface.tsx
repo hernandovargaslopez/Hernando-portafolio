@@ -74,7 +74,7 @@ const ChatInterface: React.FC = () => {
           <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} animate-in slide-in-from-bottom-2 duration-300`}>
             <div className={`max-w-[85%] rounded-full px-4 py-2.5 ${
               m.role === 'user' 
-                ? 'bg-indigo-600 text-white rounded-tr-none' 
+                ? 'bg-[#bf1820] text-white rounded-tr-none' 
                 : 'bg-slate-800 text-slate-200 border border-slate-700 rounded-tl-none'
             }`}>
               <p className="text-sm leading-relaxed whitespace-pre-wrap">{m.text}</p>
@@ -85,9 +85,9 @@ const ChatInterface: React.FC = () => {
           <div className="flex justify-start">
             <div className="bg-slate-800 text-slate-400 rounded-full px-4 py-3 border border-slate-700 rounded-tl-none">
               <div className="flex space-x-1.5 items-center">
-                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce"></div>
+                <div className="w-1.5 h-1.5 bg-[#bf1820] rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                <div className="w-1.5 h-1.5 bg-[#bf1820] rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                <div className="w-1.5 h-1.5 bg-[#bf1820] rounded-full animate-bounce"></div>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ const ChatInterface: React.FC = () => {
             onKeyDown={handleKeyPress}
             placeholder="Ask anything..."
             rows={1}
-            className="w-full bg-slate-900 border border-slate-700 rounded-full px-4 py-3 pr-14 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 resize-none text-sm text-slate-200 transition-all"
+            className="w-full bg-slate-900 border border-slate-700 rounded-full px-4 py-3 pr-14 focus:outline-none focus:ring-1 focus:ring-[#bf1820]/50 resize-none text-sm text-slate-200 transition-all"
           />
           <button
             onClick={handleSend}
@@ -110,7 +110,7 @@ const ChatInterface: React.FC = () => {
             className={`absolute right-1.5 p-2 rounded-lg transition-all ${
               !input.trim() || isLoading 
                 ? 'text-slate-600' 
-                : 'text-white bg-primary-gradient shadow-lg shadow-indigo-600/20'
+                : 'text-white bg-primary-gradient shadow-lg shadow-[#bf1820]/20'
             }`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
