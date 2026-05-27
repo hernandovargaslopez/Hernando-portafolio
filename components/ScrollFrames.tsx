@@ -177,7 +177,7 @@ return (
 
     object-cover
 
-    mt-[40px]
+    mt-[0px]
     md:-mt-[20px]
   "
 />
