@@ -170,16 +170,20 @@ return (
   src={frames[frame - 1]}
   alt="Hernando Vargas Hero"
   className="
-    w-full
-    h-[calc(100vh-170px)]
-    md:h-[calc(100vh+40px)]
-    
+  w-[90%]
+  md:w-full
+  mx-auto
+  md:mx-auto
 
-    object-cover
+  h-[calc(100vh+10px)]
+  md:h-[calc(100vh+40px)]
 
-    mt-[0px]
-    md:-mt-[20px]
-  "
+  object-contain
+  md:object-cover
+
+  mt-0
+  md:-mt-[20px]
+"
 />
 
       {/* HERO */}
