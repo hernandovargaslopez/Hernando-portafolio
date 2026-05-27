@@ -46,25 +46,26 @@ const ScrollFrames: React.FC<Props> = ({
 
   const textProgress = (frame - 1) / Math.max(1, frameCount - 1);
   const heroProgress = Math.min(textProgress / 0.5, 1);
-  const skillsProgress =
-  textProgress <= 0.5
-    ? 0
-    : Math.min((textProgress - 0.5) / 0.5, 1);
+const skillsProgress =
+    textProgress <= 0.5
+      ? 0
+      : Math.min((textProgress - 0.5) / 0.5, 1);
   const nameParts = data.name.split(' ');
   const firstName = nameParts[0];
   const lastName = nameParts.slice(1).join(' ');
   const isMobile = window.innerWidth < 768;
 
-const heroTranslate = isMobile
-  ? heroProgress * -25
-  : heroProgress * -70;
+  const heroTranslate = isMobile
+    ? heroProgress * -25
+    : heroProgress * -70;
 
-const skillsTranslate = isMobile
-  ? (1 - skillsProgress) * 40
-  : (1 - skillsProgress) * 100;
+  const skillsTranslate = isMobile
+    ? (1 - skillsProgress) * 40
+    : (1 - skillsProgress) * 100;
 
   const frames = useMemo(() => {
     const base = '/Hernando-portafolio';
+    const folder = isMobile ? 'framesmobile' : 'frames';
 
     return Array.from(
       { length: frameCount },
@@ -74,10 +75,10 @@ const skillsTranslate = isMobile
           '0'
         );
 
-        return `${base}/images/frames/frame_${num}.jpg`;
+        return `${base}/images/${folder}/frame_${num}.jpg`;
       }
     );
-  }, [frameCount]);
+  }, [frameCount, isMobile]);
 
   // precarga
   useEffect(() => {
@@ -164,25 +165,49 @@ return (
     ref={sectionRef}
     className="relative"
   >
-    <div className="sticky top-0 h-screen overflow-hidden z-20 mix-blend-multiply">
+    <div className="sticky top-0 h-screen overflow-hidden z-20 mix-blend-multiply h-[100vh]">
       <img
-        src={frames[frame - 1]}
-        alt="Hernando Vargas Hero"
-        className="w-full h-[calc(100%+40px)] -mt-[20px] object-cover"
-      />
+  src={frames[frame - 1]}
+  alt="Hernando Vargas Hero"
+  className="
+    w-full
+    h-[calc(100vh-170px)]
+    md:h-[calc(100vh+40px)]
+    
+
+    object-cover
+
+    mt-[40px]
+    md:-mt-[20px]
+  "
+/>
 
       {/* HERO */}
       <div
   className="
-  absolute inset-y-0 left-0 md:left-1/2
-  w-[70%] md:w-[85%]
-  max-w-5xl
+  absolute
+  bottom-[30%] left-1/2
+  w-full
+  -translate-x-1/2
+
+  md:inset-y-0 md:left-1/2
+  md:w-[85%]
   md:-translate-x-1/2
+
+  max-w-5xl
+
   z-30
   flex flex-col
-  justify-start md:justify-center
-  pt-[20vh] md:pt-0
+
+  items-center md:items-start
+  justify-end md:justify-center
+
+  text-center md:text-left
+
+  md:pt-0 md:pb-0
+
   px-4
+
   pointer-events-none
 "
 >
@@ -235,16 +260,28 @@ return (
       {/* SKILLS */}
       <div
   className="
-    absolute inset-y-0 right-0 md:left-1/2
-    w-1/2 md:w-[85%]
-    max-w-5xl
-    z-30
-    flex flex-col
-    items-start md:items-end
-    px-4 pt-[30vh] md:pr-6
-    md:-translate-x-1/2
-    pointer-events-none
-  "
+  absolute
+  top-[20%] left-1/2
+  w-[70%]
+  -translate-x-1/2
+
+  md:inset-y-0 md:right-0 md:left-1/2
+  md:w-[85%]
+  md:-translate-x-1/2
+
+  max-w-5xl
+  z-30
+
+  flex flex-col
+
+  items-center md:items-end md:text-left
+
+  px-4
+  pt-0 md:pt-[30vh]
+  md:pr-6
+
+  pointer-events-none
+"
 >
         <p
           className="w-full md:w-3/12 font-semibold text-slate-900 dark:text-white mb-2"
