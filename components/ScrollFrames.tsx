@@ -171,11 +171,12 @@ return (
   alt="Hernando Vargas Hero"
   className="
   w-[90%]
-  md:w-full
+  -mt-[50px]
+  w-[80%]
   mx-auto
   md:mx-auto
 
-  h-[calc(100vh+10px)]
+  h-[calc(100vh+30px)]
   md:h-[calc(100vh+40px)]
 
   object-contain
@@ -267,7 +268,7 @@ return (
   className="
   absolute
   top-[15%] left-1/2
-  w-[70%]
+  w-[80%]
   -translate-x-1/2
 
   md:inset-y-0 md:right-0 md:left-1/2
