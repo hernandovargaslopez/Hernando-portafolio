@@ -246,8 +246,9 @@ return (
             }}
           >
             {data.title}
-          </p>
-            <br />
+           </p>
+           
+             <br />
           <button
             onClick={handleDownload}
             className="mt-4 pointer-events-auto inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full border-2 border-[#bf1820] bg-transparent hover:bg-[#bf1820] hover:text-white active:scale-[0.985] transition-all shadow-md"
@@ -265,7 +266,7 @@ return (
       <div
   className="
   absolute
-  top-[20%] left-1/2
+  top-[15%] left-1/2
   w-[70%]
   -translate-x-1/2
 
@@ -307,6 +308,15 @@ return (
             opacity: skillsProgress,
           }}
         >
+          <p
+             className="text-[#444444] text-xs tracking-wide inline-block drop-shadow-sm mb-3"
+             style={{
+              transform: `translateX(${skillsTranslate * 0.5}%)`,
+               fontSize: "clamp(.85rem, 2.5vw, 0.8rem)",
+             }}
+           >
+             {data.about}
+           </p>
           {data.skills.tech.map((skill, index) => (
             <span
               key={index}
@@ -322,7 +332,7 @@ return (
       </div>
 
       {/* SCROLL */}
-      <div className="absolute bottom-[100px] md:bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white mix-blend-difference pointer-events-none text-center">
+      <div className="absolute bottom-[100px] md:bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white mix-blend-difference pointer-events-none text-center opacity-50">
         <p
           className="tracking-wide"
           style={{

@@ -18,6 +18,7 @@ export const CV_DATA: Record<Language, CVData> = {
     whatsapp: "+57 300 800 4819",
     portfolioUrl: "https://hernandovargaslopez.github.io/Hernando-portafolio/",
     summary: "Professional in Graphic Design and Audiovisual Media from Politécnico Grancolombiano University. I have 8 years of experience in developing and leading digital products, as well as designing and building websites and applications. Specialist in HTML, CSS, and JavaScript, dedicated to creating high-quality digital experiences.",
+    about: "Extensive experience in front-end development and building digital products, with a focus on interface architecture, accessibility, performance, and user experience. Ability to lead development processes, translate strategic requirements into scalable solutions, and ensure high technical quality standards in digital environments.",
     experience: [
       {
         company: "Scotiabank",
@@ -111,6 +112,7 @@ export const CV_DATA: Record<Language, CVData> = {
     whatsapp: "+57 300 800 4819",
     portfolioUrl: "https://hernandovargaslopez.github.io/Hernando-portafolio/",
     summary: "Profesional en Diseño Gráfico y Medios Audiovisuales de la Universidad Politécnico Grancolombiano. Tengo 8 años de experiencia en el desarrollo y liderazgo de productos digitales, así como en el diseño y construcción de sitios web y aplicaciones. Especialista en HTML, CSS y JavaScript, dedicado a crear experiencias digitales de alta calidad.",
+    about: "Experiencia en desarrollo front-end y productos digitales, con enfoque en interfaces escalables, accesibilidad y rendimiento.",
     experience: [
       {
         company: "Scotiabank",

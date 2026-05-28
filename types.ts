@@ -24,15 +24,16 @@ export interface ReferenceItem {
 }
 
 export interface CVData {
-  name: string;
-  title: string;
-  email: string;
-  phone: string;
-  location: string;
-  whatsapp: string;
-  portfolioUrl: string;
-  summary: string;
-  experience: ExperienceItem[];
+   name: string;
+   title: string;
+   email: string;
+   phone: string;
+   location: string;
+   whatsapp: string;
+   portfolioUrl: string;
+   summary: string;
+   about: string;
+   experience: ExperienceItem[];
   skills: {
     tech: string[];
     design: string[];
